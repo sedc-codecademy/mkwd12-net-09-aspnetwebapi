@@ -30,5 +30,7 @@ This repository will contain every piece of material about the subject. It will 
 
 ## Contact
 
-* Trainer: trainer mail
-* Assistant: assistant mail
+* Trainer: stojanovska_tijana@outlook.com
+
+* Assistant: rozedobrinova2003@gmail.com
+
