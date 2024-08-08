@@ -30,5 +30,5 @@ This repository will contain every piece of material about the subject. It will 
 
 ## Contact
 
-* Trainer: trainer mail
-* Assistant: assistant mail
+* Trainer: panovski.martin93@gmail.com
+* Assistant: slaveivanovski2@yahoo.com

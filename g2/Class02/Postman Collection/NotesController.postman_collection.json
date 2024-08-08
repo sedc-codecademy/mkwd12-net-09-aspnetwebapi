@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "c6d1e16f-4793-41cd-8ee2-5eff584b423f",
+		"name": "NotesController",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44316/api/notes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44316",
+					"path": [
+						"api",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByIndex",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44316/api/notes/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44316",
+					"path": [
+						"api",
+						"notes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNoteByIdAndUserById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44316/api/notes/1/user/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44316",
+					"path": [
+						"api",
+						"notes",
+						"1",
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateNote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"Go home now\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44316/api/notes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44316",
+					"path": [
+						"api",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteNote",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44316/api/notes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44316",
+					"path": [
+						"api",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
