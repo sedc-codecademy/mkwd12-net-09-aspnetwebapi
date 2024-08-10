@@ -20,4 +20,4 @@ Try out PostMan and Swagger
 
 ## Bonus
 
-Add POST method that accepts list of  beverages from the body of the request and returns their brands as a list of strings.
+Add POST method that accepts list of beverages from the body of the request adds them to the Beverages table in the StaticDb and return appropriate response.
