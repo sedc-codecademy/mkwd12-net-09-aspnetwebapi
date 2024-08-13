@@ -9,7 +9,7 @@ For the purpose of this course we will develop an E-Shop web api. Particulary, w
 - Create Controllers with the appropriate CRUD endpoints for all the entities
 - Create DTO models in order to sent to or recive data from the client
 
-- **Bonus**
+**Bonus**
  - Try yourself at home and implement the rest of the controller that we didn't finish on the class. Anyway, consider that this will be done on the 
  next (Part 2) class dedicated to this E-Shop API.
 
