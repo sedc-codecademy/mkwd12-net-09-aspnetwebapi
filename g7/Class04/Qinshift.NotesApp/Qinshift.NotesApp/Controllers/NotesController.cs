@@ -180,5 +180,69 @@ namespace Qinshift.NotesApp.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Something went wrong! Contact the admin!");
             }
         }
+
+        [HttpDelete("{noteId}")]
+        public IActionResult DeleteById([FromRoute] int noteId)
+        {
+            try
+            {
+                // 1) Validate the id
+                if (noteId <= 0)
+                {
+                    return BadRequest("Id has invalid value!");
+                }
+
+                // 2) Find the note by ID in the static database
+                Note noteDb = StaticDb.Notes.FirstOrDefault(n => n.Id == noteId);
+                if (noteDb is null)
+                {
+                    return NotFound($"Note with id {noteId} was not found!");
+                }
+
+                // 3) Remove the note from the Static Db
+                StaticDb.Notes.Remove(noteDb);
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                // log
+                return StatusCode(StatusCodes.Status500InternalServerError, "Something went wrong! Contact the admin!");
+            }
+        }
+
+        [HttpGet("user/{userId}")]
+        public ActionResult<List<NoteDto>> GetNotesByUser(int userId)
+        {
+            try
+            {
+                // 1) Retrieve all notes for the specified user 
+                List<Note> userNotesDb = StaticDb.Notes.Where(n => n.UserId == userId).ToList();
+
+                // 2) Check if any notes were found
+                if (userNotesDb == null || userNotesDb.Count == 0)
+                {
+                    return NotFound($"Notes for user with id {userId} not found!");
+                }
+
+                // 3) Map the notes to DTO
+                List<NoteDto> notes = userNotesDb.Select(n => new NoteDto
+                {
+                    Priority = n.Priority,
+                    Text = n.Text,
+                    User = n.User.GetFullName(),
+                    Tags = n.Tags.Select(t => t.Name).ToList()
+                }).ToList();
+
+                // 4) Return the list of mapped notes
+                return Ok(notes);
+            }
+            catch (Exception ex)
+            {
+                // log
+                return StatusCode(StatusCodes.Status500InternalServerError, "Something went wrong! Contact the admin!");
+            }
+        }
+
     }
 }
