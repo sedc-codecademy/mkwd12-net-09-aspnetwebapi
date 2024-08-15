@@ -1,0 +1,18 @@
+Create MovieRent API:
+
+1. Create new project in VS for web api
+2. Think about naming convention of the project
+3. Create 5 projects in the solution (including API)
+    - Qinshift.Movies.Api
+    - Qinshift.Movies.DataAccess
+    - Qinshift.Movies.DomainModels
+    - Qinshift.Movies.Services
+    - Qinshift.Movies.DTOs
+4. Create Movie domain model
+    - Think about repetitive props
+    - Think about movie Genre
+5. Create Data source (StaticDb)
+6. Create Repositories for data manipulation
+7. Create DTOs
+8. Create Service for manipulation with movies
+9. Create Controller for handling Movie endpoints

@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "76637feb-70dc-4c78-8c39-663eb909e229",
+		"name": "NotesController",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7144/api/Notes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7144",
+					"path": [
+						"api",
+						"Notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByIndex",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7144/api/Notes/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7144",
+					"path": [
+						"api",
+						"Notes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByQueryString",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7144/api/Notes/queryString?index=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7144",
+					"path": [
+						"api",
+						"Notes",
+						"queryString"
+					],
+					"query": [
+						{
+							"key": "index",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FilterByMultipleParamsWithText",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7144/api/Notes/multipleQueryParams?text=Drink",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7144",
+					"path": [
+						"api",
+						"Notes",
+						"multipleQueryParams"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "Drink"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FilterByMultipleParamsWithPriority",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7144/api/Notes/multipleQueryParams?priority=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7144",
+					"path": [
+						"api",
+						"Notes",
+						"multipleQueryParams"
+					],
+					"query": [
+						{
+							"key": "priority",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FilterByMultipleParamsWithTextAndPriority",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Testheader",
+						"value": "test",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7144/api/Notes/multipleQueryParams?text=Drink&priority=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7144",
+					"path": [
+						"api",
+						"Notes",
+						"multipleQueryParams"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "Drink"
+						},
+						{
+							"key": "priority",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "TestHeader",
+						"value": "en",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7144/api/Notes/header",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7144",
+					"path": [
+						"api",
+						"Notes",
+						"header"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userAgent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7144/api/Notes/userAgent",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7144",
+					"path": [
+						"api",
+						"Notes",
+						"userAgent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateNote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 4,\r\n  \"tags\": [\r\n    {\r\n      \"name\": \"Home\",\r\n      \"color\": \"red\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7144/api/Notes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7144",
+					"path": [
+						"api",
+						"Notes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
