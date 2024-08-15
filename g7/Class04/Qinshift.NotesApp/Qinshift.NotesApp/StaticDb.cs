@@ -27,14 +27,14 @@ namespace Qinshift.NotesApp
 
         public static List<Tag> Tags = new List<Tag>
         {
-                new Tag(){ Id = 1, Name = "Exercise", Color = "blue"},
-                new Tag(){ Id = 2, Name = "Work", Color = "green"},
-                new Tag(){ Id = 3, Name = "Study", Color = "purple"},
-                new Tag(){ Id = 4, Name = "Health", Color = "darkred"},
-                new Tag(){ Id = 5, Name = "Shopping", Color = "pink"},
-                new Tag(){ Id = 6, Name = "Travel", Color = "magenta"},
-                new Tag(){ Id = 7, Name = "Urgent", Color = "red"},
-                new Tag(){ Id = 8, Name = "Reading", Color = "lightblue"}
+            new Tag(){ Id = 1, Name = "Exercise", Color = "blue"},
+            new Tag(){ Id = 2, Name = "Work", Color = "green"},
+            new Tag(){ Id = 3, Name = "Study", Color = "purple"},
+            new Tag(){ Id = 4, Name = "Health", Color = "darkred"},
+            new Tag(){ Id = 5, Name = "Shopping", Color = "pink"},
+            new Tag(){ Id = 6, Name = "Travel", Color = "magenta"},
+            new Tag(){ Id = 7, Name = "Urgent", Color = "red"},
+            new Tag(){ Id = 8, Name = "Reading", Color = "lightblue"}
         };
 
         public static List<Note> Notes = new List<Note>()
@@ -68,5 +68,11 @@ namespace Qinshift.NotesApp
             }
         };
 
+        private static int noteId = Notes.Count; // set the initial value to be the length of the Notes items
+
+        public static int GenerateNewId()
+        {
+            return ++noteId; // increment by 1 and then use the noteId value
+        }
     }
 }
