@@ -20,9 +20,10 @@ namespace Qinshift.MovieRent.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            builder.Services.AddScoped<IMovieRepository, MovieRepository>();
-            builder.Services.AddScoped<IMovieService, MovieService>();
+
+            //builder.Services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+            builder.Services.AddTransient<IRepository<Movie>, MovieRepository>();
+            builder.Services.AddTransient<IMovieService, MovieService>();
 
             var app = builder.Build();
 
