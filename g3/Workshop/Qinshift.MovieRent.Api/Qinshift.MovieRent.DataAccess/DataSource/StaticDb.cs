@@ -5,8 +5,12 @@ namespace Qinshift.MovieRent.DataAccess.DataSource
 {
     public static class StaticDb
     {
-        public static int MovieId = Movies.Max(x => x.Id + 1);
-        public static List<Movie> Movies = new()
+        public static int MovieId;
+        public static List<Movie> Movies;
+
+        static StaticDb()
+        {
+            Movies = new()
         {
             new() {
                 Id = 1,
@@ -79,5 +83,7 @@ namespace Qinshift.MovieRent.DataAccess.DataSource
                 Genre = Genre.Drama
             }
         };
+            MovieId = 10;
+        }
     }
 }

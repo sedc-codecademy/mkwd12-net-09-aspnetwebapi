@@ -10,8 +10,8 @@ namespace Qinshift.MovieRent.Services.Implementation
 {
     public class MovieService : IMovieService
     {
-        private readonly IMovieRepository _movieRepo;
-        public MovieService(IMovieRepository movieRepo)
+        private readonly IRepository<Movie> _movieRepo;
+        public MovieService(IRepository<Movie> movieRepo)
         {
             _movieRepo = movieRepo;
         }
