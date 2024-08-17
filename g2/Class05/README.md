@@ -15,7 +15,7 @@ A movie contains:
 * title - required field
 * description
 * year - required field
-* genre - required field
+* genre - required field (ex. ENUM)
 
 ## Use DTOs
 
