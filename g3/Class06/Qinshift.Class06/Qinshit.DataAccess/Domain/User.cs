@@ -21,5 +21,7 @@ namespace Qinshit.DataAccess.Domain
 
         [InverseProperty("User")]
         public virtual ICollection<Contact> Contacts { get; set; }
+
+        public virtual ICollection<Meal> Meals { get; set; }
     }
 }
