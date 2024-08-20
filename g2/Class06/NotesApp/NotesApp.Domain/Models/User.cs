@@ -9,6 +9,6 @@ namespace NotesApp.Domain.Models
         public string Username { get;set; }
         public string Password { get;set; }
         public int Age { get; set; }
-        public List<Note> Notes { get; set; } = new List<Note>();
+        public virtual List<Note> Notes { get; set; } = new List<Note>();
     }
 }
