@@ -8,8 +8,10 @@ namespace Qinshit.DataAccess.Domain
     {
         public User()
         {
-            Notes = new HashSet<Note>();
-        }
+            Notes = new List<Note>();
+            Contacts = new List<Contact>();
+            Meals = new List<Meal>();
+		}
 
         public int Id { get; set; }
         public string? Username { get; set; }
