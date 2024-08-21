@@ -1,4 +1,4 @@
-﻿namespace Qinshift.EShop.API.Models
+﻿namespace Qinshift.EShop.DomainModels
 {
     public class Review : BaseEntity
     {
