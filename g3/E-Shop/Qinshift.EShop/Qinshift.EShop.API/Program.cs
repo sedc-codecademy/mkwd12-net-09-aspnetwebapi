@@ -1,3 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using Qinshift.EShop.Services.Helpers;
+using Qinshift.EShop.Services.Implementation;
+using Qinshift.EShop.Services.Interface;
+
 namespace Qinshift.EShop.API
 {
     public class Program
@@ -12,6 +17,14 @@ namespace Qinshift.EShop.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            //get conn string from appSettings.json
+            string connString = "Server=.;Database=EShopDb;Trusted_Connection=True";
+
+            builder.Services.RegisterDbContext(connString);
+            builder.Services.RegisterRepositories();
+
+            builder.Services.AddTransient<ICategoryService, CategoryService>();
 
             var app = builder.Build();
 

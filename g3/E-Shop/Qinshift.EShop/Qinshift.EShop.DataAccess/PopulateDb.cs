@@ -75,6 +75,7 @@ namespace Qinshift.EShop.DataAccess
 					new Review
 					{
 						Id = 1,
+						ReviewerName = "Martin",
 						Comment = "Very nice product",
 						Rating = 5,
 						ImageUrl = "images/phone.jpg",
@@ -82,7 +83,8 @@ namespace Qinshift.EShop.DataAccess
 					},
 					new Review
 					{
-						Id = 1,
+						Id = 2,
+						ReviewerName = "Slave",
 						Comment = "Bad product. It is very slow. The ram is too much used",
 						Rating = 2,
 						ImageUrl = "images/phone.jpg",

@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.EShop.DomainModels
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.EShop.DataAccess", "Qinshift.EShop.DataAccess\Qinshift.EShop.DataAccess.csproj", "{8CBE5189-A9DF-42E7-8C9B-DEE9A7AA472C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.EShop.Services", "Qinshift.Services\Qinshift.EShop.Services.csproj", "{3B3CEEBB-608F-477D-A195-61D2952DC834}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.EShop.DTOs", "Qinshift.EShop.DTOs\Qinshift.EShop.DTOs.csproj", "{FCD14CEF-C84D-4270-9F65-88BCDB62510C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{8CBE5189-A9DF-42E7-8C9B-DEE9A7AA472C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CBE5189-A9DF-42E7-8C9B-DEE9A7AA472C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CBE5189-A9DF-42E7-8C9B-DEE9A7AA472C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B3CEEBB-608F-477D-A195-61D2952DC834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3CEEBB-608F-477D-A195-61D2952DC834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3CEEBB-608F-477D-A195-61D2952DC834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3CEEBB-608F-477D-A195-61D2952DC834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCD14CEF-C84D-4270-9F65-88BCDB62510C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD14CEF-C84D-4270-9F65-88BCDB62510C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD14CEF-C84D-4270-9F65-88BCDB62510C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD14CEF-C84D-4270-9F65-88BCDB62510C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
