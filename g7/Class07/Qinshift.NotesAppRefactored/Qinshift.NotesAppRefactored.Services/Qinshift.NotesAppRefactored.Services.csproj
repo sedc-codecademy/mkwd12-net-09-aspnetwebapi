@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Qinshift.NotesAppRefactored.Data\Qinshift.NotesAppRefactored.Data.csproj" />
+    <ProjectReference Include="..\Qinshift.NotesAppRefactored.Dtos\Qinshift.NotesAppRefactored.Dtos.csproj" />
+    <ProjectReference Include="..\Qinshift.NotesAppRefactored.Mappers\Qinshift.NotesAppRefactored.Mappers.csproj" />
+    <ProjectReference Include="..\Qinshift.NotesAppRefactored.Shared\Qinshift.NotesAppRefactored.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

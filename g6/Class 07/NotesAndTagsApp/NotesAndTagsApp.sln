@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesAndTagsApp", "NotesAndTagsApp\NotesAndTagsApp.csproj", "{317DA703-B4C2-4677-B7D7-1764A7BA5285}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesAndTAgsApp.Domain", "NotesAndTAgsApp.Domain\NotesAndTAgsApp.Domain.csproj", "{00184445-4F11-448A-85B9-CD519D2A30D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesAndTagsApp.DataAccess", "NotesAndTagsApp.DataAccess\NotesAndTagsApp.DataAccess.csproj", "{B9E8E289-AEF0-4854-B4E5-AA310D12B58B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesAndTagsApp.Helpers", "NotesAndTagsApp.Helpers\NotesAndTagsApp.Helpers.csproj", "{703FF629-1261-423B-9AB3-8CAFF6C0418F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesAndTagsApp.DTOs", "NotesAndTagsApp.DTOs\NotesAndTagsApp.DTOs.csproj", "{B572444C-F4BC-437E-8E93-E50C488B8A1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesAndTagsApp.Services", "NotesAndTagsApp.Services\NotesAndTagsApp.Services.csproj", "{C47D9D1F-CB84-49C9-B736-251974A93E84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{317DA703-B4C2-4677-B7D7-1764A7BA5285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317DA703-B4C2-4677-B7D7-1764A7BA5285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317DA703-B4C2-4677-B7D7-1764A7BA5285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317DA703-B4C2-4677-B7D7-1764A7BA5285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00184445-4F11-448A-85B9-CD519D2A30D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00184445-4F11-448A-85B9-CD519D2A30D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00184445-4F11-448A-85B9-CD519D2A30D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00184445-4F11-448A-85B9-CD519D2A30D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9E8E289-AEF0-4854-B4E5-AA310D12B58B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9E8E289-AEF0-4854-B4E5-AA310D12B58B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9E8E289-AEF0-4854-B4E5-AA310D12B58B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9E8E289-AEF0-4854-B4E5-AA310D12B58B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{703FF629-1261-423B-9AB3-8CAFF6C0418F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703FF629-1261-423B-9AB3-8CAFF6C0418F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703FF629-1261-423B-9AB3-8CAFF6C0418F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703FF629-1261-423B-9AB3-8CAFF6C0418F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B572444C-F4BC-437E-8E93-E50C488B8A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B572444C-F4BC-437E-8E93-E50C488B8A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B572444C-F4BC-437E-8E93-E50C488B8A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B572444C-F4BC-437E-8E93-E50C488B8A1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C47D9D1F-CB84-49C9-B736-251974A93E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47D9D1F-CB84-49C9-B736-251974A93E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47D9D1F-CB84-49C9-B736-251974A93E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47D9D1F-CB84-49C9-B736-251974A93E84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03D93E94-A78E-4A74-968F-D35758DAAC5A}
+	EndGlobalSection
+EndGlobal
