@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Qinshit.DataAccess.Domain;
+using System.Text.Json.Serialization;
 
 namespace Qinshift.ScaffoldNotesApp
 {
@@ -11,14 +13,23 @@ namespace Qinshift.ScaffoldNotesApp
 
 			// Add services to the container.
 
-			builder.Services.AddControllers();
+			builder.Services.AddControllers().AddJsonOptions(options =>
+				options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
+				);
+
+
+
+
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen();
 
 			builder.Services.AddDbContext<NotesScaffoldDbContext>
-				(x => x.UseSqlServer("Server=.;Database=NotesScaffoldDb;Trusted_Connection=True"));
+				(x => 
+				x.UseLazyLoadingProxies()
+				.UseSqlServer("Server=.;Database=NotesScaffoldDb;Trusted_Connection=True"));
 
+			
 
 			var app = builder.Build();
 
