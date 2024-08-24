@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Qinshift.EShop.DomainModels\Qinshift.EShop.DomainModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="AdonetImplementation\" />
+  </ItemGroup>
+
 </Project>
