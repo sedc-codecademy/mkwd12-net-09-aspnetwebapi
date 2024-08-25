@@ -8,16 +8,16 @@ namespace Qinshift.EShop.DataAccess.AdonetImplementation
 	{
 		private readonly string _connString;
 
-        public CategoryAdoRepository(string connString)
-        {
-            _connString = connString;
-        }
+		public CategoryAdoRepository(string connString)
+		{
+			_connString = connString;
+		}
 
 
-        public IEnumerable<Category> GetAll()
+		public IEnumerable<Category> GetAll()
 		{
 			// 1. Create new connection to SQL db
-			SqlConnection connection = new SqlConnection( _connString);
+			SqlConnection connection = new SqlConnection(_connString);
 
 			// 2. Open the connection
 			connection.Open();
@@ -31,7 +31,7 @@ namespace Qinshift.EShop.DataAccess.AdonetImplementation
 
 			SqlDataReader reader = cmd.ExecuteReader();
 
-			while(reader.Read())
+			while (reader.Read())
 			{
 				// First approach of getting values from db
 				//categories.Add(new Category
@@ -79,7 +79,7 @@ namespace Qinshift.EShop.DataAccess.AdonetImplementation
 			List<Category> categories = new List<Category>();
 			SqlDataReader reader = cmd.ExecuteReader();
 
-			while(reader.Read())
+			while (reader.Read())
 			{
 				categories.Add(new Category()
 				{
@@ -101,11 +101,22 @@ namespace Qinshift.EShop.DataAccess.AdonetImplementation
 
 			SqlCommand cmd = new SqlCommand();
 			cmd.Connection = connection;
-			cmd.CommandText = "INSERT INTO dbo.Categories(Text, Description) " +
-							  "VALUES(@name, @description)";
+			//cmd.CommandText = "INSERT INTO dbo.Categories(Name, Description) " +
+			//				  "VALUES(@name, @description)";
 
-			cmd.Parameters.AddWithValue("@name", entity.Name);
-			cmd.Parameters.AddWithValue("@description", entity.Description);
+			//cmd.Parameters.AddWithValue("@name", entity.Name);
+			//cmd.Parameters.AddWithValue("@description", entity.Description);
+
+
+			// BAD Code prone to SQL Injection
+			// Add this code in the description from the swagger endpoint test in order to check this
+			// {
+			//	"name": "Test name",
+			//	"description": "Test description'); DROP TABLE Reviews;--"
+			// }
+
+			cmd.CommandText = $@"INSERT INTO Categories (Name, Description) 
+								VALUES('{entity.Name}', '{entity.Description}');";
 
 			int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -114,11 +125,37 @@ namespace Qinshift.EShop.DataAccess.AdonetImplementation
 		}
 		public int Update(Category entity)
 		{
-			throw new NotImplementedException();
+			SqlConnection connection = new SqlConnection(_connString);
+			connection.Open();
+
+			SqlCommand cmd = new SqlCommand();
+			cmd.Connection = connection;
+			cmd.CommandText = "UPDATE dbo.Categories " +
+							  "SET Name = @name, Description = @description" +
+							  "WHERE Id = @id";
+
+			cmd.Parameters.AddWithValue("@id", entity.Id);
+			cmd.Parameters.AddWithValue("@name", entity.Name);
+			cmd.Parameters.AddWithValue("@description", entity.Description);
+
+			int rowsAffected = cmd.ExecuteNonQuery();
+			connection.Close();
+
+			return rowsAffected;
 		}
 		public int Remove(int id)
 		{
-			throw new NotImplementedException();
+			SqlConnection connection = new SqlConnection(_connString);
+			connection.Open();
+
+			SqlCommand cmd = new SqlCommand();
+			cmd.Connection = connection;
+			cmd.CommandText = "DELETE * FROM dbo.Categories WHERE Id = @id";
+			cmd.Parameters.AddWithValue("@id", id);
+
+			int rowsAffected = cmd.ExecuteNonQuery();
+			connection.Close();
+			return rowsAffected;
 		}
 	}
 }

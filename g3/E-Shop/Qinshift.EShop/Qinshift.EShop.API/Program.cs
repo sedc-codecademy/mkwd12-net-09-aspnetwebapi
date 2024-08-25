@@ -22,7 +22,7 @@ namespace Qinshift.EShop.API
             string connString = "Server=.;Database=EShopDb;Trusted_Connection=True";
 
             builder.Services.RegisterDbContext(connString);
-            builder.Services.RegisterRepositories();
+            builder.Services.RegisterRepositories(connString);
 
             builder.Services.AddTransient<ICategoryService, CategoryService>();
 
