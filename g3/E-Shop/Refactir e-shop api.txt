@@ -1,0 +1,9 @@
+1. Create project for DomainModels - done
+2. Move all the models in the appropriate project - done
+3. Create DataAccess project in the solution - done
+4. Install EntityFrameworkCore packages - done
+5. Create DbContext class and configure relations - done
+6. Implement repositories (Interfaces and Implementations)
+7. Create services project in the solution
+8. Create DTOs project in the solution
+9. Reference all the projects according to the N-tier architecture rules

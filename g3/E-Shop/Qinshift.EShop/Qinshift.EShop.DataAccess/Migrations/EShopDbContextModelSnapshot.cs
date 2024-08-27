@@ -30,20 +30,20 @@ namespace Qinshift.EShop.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CreatedBy")
+                    b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedOn")
+                    b.Property<DateTime?>("CreatedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ModifiedBy")
+                    b.Property<int?>("ModifiedBy")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ModifiedOn")
+                    b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -59,30 +59,30 @@ namespace Qinshift.EShop.DataAccess.Migrations
                         {
                             Id = 1,
                             CreatedBy = 1,
-                            CreatedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5705),
+                            CreatedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2800),
                             Description = "All sort of smart phones and tablets",
                             ModifiedBy = 1,
-                            ModifiedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5741),
+                            ModifiedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2834),
                             Name = "Smartphones and Tablets"
                         },
                         new
                         {
                             Id = 2,
                             CreatedBy = 1,
-                            CreatedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5747),
+                            CreatedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2840),
                             Description = "Different brands of PCs and all type of hardware components.",
                             ModifiedBy = 1,
-                            ModifiedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5749),
+                            ModifiedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2842),
                             Name = "PC and hardware"
                         },
                         new
                         {
                             Id = 3,
                             CreatedBy = 1,
-                            CreatedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5751),
+                            CreatedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2844),
                             Description = "Different brands of laptops",
                             ModifiedBy = 1,
-                            ModifiedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5753),
+                            ModifiedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2846),
                             Name = "Laptops"
                         });
                 });
@@ -98,10 +98,10 @@ namespace Qinshift.EShop.DataAccess.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CreatedBy")
+                    b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedOn")
+                    b.Property<DateTime?>("CreatedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
@@ -112,10 +112,10 @@ namespace Qinshift.EShop.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ModifiedBy")
+                    b.Property<int?>("ModifiedBy")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ModifiedOn")
+                    b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -140,11 +140,11 @@ namespace Qinshift.EShop.DataAccess.Migrations
                             Id = 1,
                             CategoryId = 1,
                             CreatedBy = 1,
-                            CreatedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5777),
+                            CreatedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2868),
                             Description = "256GB | 5.8' | 8GB RAM",
                             ImageUrl = "iphone15.jpg",
                             ModifiedBy = 1,
-                            ModifiedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5779),
+                            ModifiedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2870),
                             Name = "Iphone 15 Pro 256GB",
                             Price = 1000m,
                             StockQuantity = 50
@@ -154,11 +154,11 @@ namespace Qinshift.EShop.DataAccess.Migrations
                             Id = 2,
                             CategoryId = 3,
                             CreatedBy = 1,
-                            CreatedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5785),
+                            CreatedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2877),
                             Description = "500GB SSD | 17' | 16GB RAM",
                             ImageUrl = "lenovoY700.jpg",
                             ModifiedBy = 1,
-                            ModifiedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5787),
+                            ModifiedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2879),
                             Name = "Lenovo Y700 Gaming laptop",
                             Price = 2000m,
                             StockQuantity = 20
@@ -168,11 +168,11 @@ namespace Qinshift.EShop.DataAccess.Migrations
                             Id = 3,
                             CategoryId = 2,
                             CreatedBy = 1,
-                            CreatedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5789),
+                            CreatedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2882),
                             Description = "16GB VRAM",
                             ImageUrl = "graficka.jpg",
                             ModifiedBy = 1,
-                            ModifiedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5791),
+                            ModifiedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2883),
                             Name = "NVIDIA GeForce 4090",
                             Price = 2200m,
                             StockQuantity = 10
@@ -191,20 +191,20 @@ namespace Qinshift.EShop.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CreatedBy")
+                    b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedOn")
+                    b.Property<DateTime?>("CreatedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ModifiedBy")
+                    b.Property<int?>("ModifiedBy")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ModifiedOn")
+                    b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("ProductId")
@@ -229,10 +229,10 @@ namespace Qinshift.EShop.DataAccess.Migrations
                             Id = 1,
                             Comment = "Very nice product",
                             CreatedBy = 1,
-                            CreatedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5813),
+                            CreatedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2904),
                             ImageUrl = "images/phone.jpg",
                             ModifiedBy = 1,
-                            ModifiedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5815),
+                            ModifiedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2906),
                             ProductId = 1,
                             Rating = 5,
                             ReviewerName = "Martin"
@@ -242,10 +242,10 @@ namespace Qinshift.EShop.DataAccess.Migrations
                             Id = 2,
                             Comment = "Bad product. It is very slow. The ram is too much used",
                             CreatedBy = 1,
-                            CreatedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5820),
+                            CreatedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2911),
                             ImageUrl = "images/phone.jpg",
                             ModifiedBy = 1,
-                            ModifiedOn = new DateTime(2024, 8, 21, 20, 5, 43, 187, DateTimeKind.Local).AddTicks(5822),
+                            ModifiedOn = new DateTime(2024, 8, 25, 11, 49, 50, 600, DateTimeKind.Local).AddTicks(2912),
                             ProductId = 1,
                             Rating = 2,
                             ReviewerName = "Slave"
