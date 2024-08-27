@@ -19,6 +19,7 @@
     <ProjectReference Include="..\NoteApp.Dto\NotesApp.Dto.csproj" />
     <ProjectReference Include="..\NotesApp.DataAccess\NotesApp.DataAccess.csproj" />
     <ProjectReference Include="..\NotesApp.Helpers\NotesApp.Helpers.csproj" />
+    <ProjectReference Include="..\NotesApp.Shared\NotesApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>
