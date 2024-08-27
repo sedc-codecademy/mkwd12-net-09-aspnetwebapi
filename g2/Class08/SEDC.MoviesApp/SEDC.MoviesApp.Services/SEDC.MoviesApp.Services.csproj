@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SEDC.MoviesApp.DataAccess\SEDC.MoviesApp.DataAccess.csproj" />
+    <ProjectReference Include="..\SEDC.MoviesApp.Dtos\SEDC.MoviesApp.Dtos.csproj" />
+    <ProjectReference Include="..\SEDC.MoviesApp.Mappers\SEDC.MoviesApp.Mappers.csproj" />
+    <ProjectReference Include="..\SEDC.MoviesApp.Shared\SEDC.MoviesApp.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
