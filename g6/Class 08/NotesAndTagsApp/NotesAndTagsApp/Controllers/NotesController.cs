@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using NotesApp.Dto.NoteDto;
-using NotesApp.Services.Interface;
-using NotesApp.Shared.CustomException;
+using NotesAndTagsApp.DTOs;
+using NotesAndTagsApp.Services.Interfaces;
+using NotesAndTagsApp.Shared.CustomExceptions;
 
-namespace NotesApp.Controllers
+namespace NotesAndTagsApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -12,33 +12,33 @@ namespace NotesApp.Controllers
     {
         private readonly INoteService _noteService;
 
-        public NotesController(INoteService noteService) //DI
+        public NotesController(INoteService noteService)
         {
             _noteService = noteService;
         }
 
         [HttpGet]
-        public ActionResult<List<NoteDto>> GetAllNotes()
+        public ActionResult<List<NoteDto>> GetAll()
         {
             try
             {
                 return Ok(_noteService.GetAllNotes());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
-        }
 
+        }
         [HttpGet("{id}")]
-        public ActionResult<NoteDto> GetNoteById(int id)
+        public ActionResult<NoteDto> GetById(int id)
         {
             try
             {
-                var note = _noteService.GetNoteById(id);
-                return Ok(note);
+                var noteDto = _noteService.GetById(id);
+                return Ok(noteDto);
             }
-            catch (NoteNotFoundException ex)
+            catch(NoteNotFoundException ex)
             {
                 return NotFound(ex.Message);
             }
@@ -48,19 +48,19 @@ namespace NotesApp.Controllers
             }
         }
 
-        [HttpPost("addNote")]
+        [HttpPost]
         public IActionResult AddNote([FromBody] AddNoteDto addNoteDto)
         {
             try
             {
                 _noteService.AddNote(addNoteDto);
-                return StatusCode(StatusCodes.Status201Created, "Note was created!");
+                return StatusCode(StatusCodes.Status201Created, "Note created");
             }
-            catch(NoteDataException ex)
+            catch(NoteDataException ex) //catch our custom made exception
             {
                 return BadRequest(ex.Message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
@@ -73,34 +73,35 @@ namespace NotesApp.Controllers
             {
                 _noteService.UpdateNote(updateNoteDto);
                 return NoContent(); //204
+
             }
-            catch(NoteNotFoundException ex)
+            catch (NoteNotFoundException ex)
             {
                 return NotFound(ex.Message);
             }
-            catch(NoteDataException ex)
+            catch (NoteDataException ex) 
             {
                 return BadRequest(ex.Message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public IActionResult DeleteNote(int id)
         {
             try
             {
                 _noteService.DeleteNote(id);
-                return Ok($"Note with id: {id} was succ deleted!");
+                return Ok($"Note with id {id} was successfully deleted");
             }
-            catch(NoteNotFoundException ex)
+            catch (NoteNotFoundException ex)
             {
                 return NotFound(ex.Message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
