@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Qinshift.MovieApp.Data\Qinshift.MovieApp.Data.csproj" />
+    <ProjectReference Include="..\Qinshift.MovieApp.Dtos\Qinshift.MovieApp.Dtos.csproj" />
+    <ProjectReference Include="..\Qinshift.MovieApp.Mappers\Qinshift.MovieApp.Mappers.csproj" />
+    <ProjectReference Include="..\Qinshift.MovieApp.Shared\Qinshift.MovieApp.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
