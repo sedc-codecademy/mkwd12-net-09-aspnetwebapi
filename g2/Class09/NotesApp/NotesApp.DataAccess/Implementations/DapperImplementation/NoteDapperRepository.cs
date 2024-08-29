@@ -70,6 +70,7 @@ namespace NotesApp.DataAccess.Implementations.DapperImplementation
 
         public void Delete(Note entity)
         {
+            // NOTE: in real case scenario we rarely perform HARD delete to records in our Database, instead we use SOFT delete (ex. set model's property IsDeleted to true)
             using SqlConnection connection = new SqlConnection(_connectionString);
             connection.Execute("DELETE FROM Note WHERE Id = @noteId", new { noteId = entity.Id });
         }
