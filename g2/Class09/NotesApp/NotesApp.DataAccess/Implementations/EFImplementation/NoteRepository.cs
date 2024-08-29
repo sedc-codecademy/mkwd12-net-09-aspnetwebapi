@@ -15,9 +15,22 @@ namespace NotesApp.DataAccess.Implementations.EFImplementation
 
         public List<Note> GetAll()
         {
-            return _notesAppDbContext.Note
-                .Include(x => x.User) // Join Notes table with Users table
-                .ToList();
+            //return _notesAppDbContext.Note
+            //    .Include(x => x.User) // Join Notes table with Users table
+            //    .ToList();
+
+            // ===> EF behind scenes
+            // Form the query in C#
+            var query = _notesAppDbContext.Note.Include(x => x.User);
+
+            // Way to check your LINQ to SQL translation
+            var translatedQuery = query.ToQueryString();
+
+            // When calling ToList() (executable method) our query is translated into SQL query => executed in the database => retrives data
+            var materializedQuery = query.ToList();
+            // EntityFramework Executable methods: ToList(), FirstOrDefault(), Any(), SingleOrDefault(), Count()...
+
+            return materializedQuery;
         }
 
         public Note GetById(int id)

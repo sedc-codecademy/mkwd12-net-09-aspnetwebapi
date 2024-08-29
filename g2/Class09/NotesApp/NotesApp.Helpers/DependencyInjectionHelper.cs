@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NotesApp.DataAccess;
+using NotesApp.DataAccess.Implementations.AdoNetImplementation;
 using NotesApp.DataAccess.Implementations.EFImplementation;
 using NotesApp.Domain.Models;
 using NotesApp.Services.Implementation;
@@ -11,7 +12,8 @@ namespace NotesApp.Helpers
     {
         public static void InjectRepositories(IServiceCollection services)
         {
-            services.AddTransient<IRepository<Note>, NoteRepository>();
+            services.AddTransient<IRepository<Note>, NoteAdoNetRepository>();
+            //services.AddTransient<IRepository<Note>, NoteRepository>();
             services.AddTransient<IRepository<User>, UserRepository>();
         }
 

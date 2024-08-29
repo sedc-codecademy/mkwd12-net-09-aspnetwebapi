@@ -19,7 +19,7 @@ namespace NotesApp.DataAccess.Extensions
                 // Configure Text property with required and max length constraints
                 entity.Property(e => e.Text)
                       .IsRequired() // Not Null
-                      .HasMaxLength(1000); // nvarchar(1000)
+                      .HasMaxLength(250); // nvarchar(250)
 
                 // Configure Priority & Tag enums to be stored as integers in the database
                 entity.Property(e => e.Priority)
