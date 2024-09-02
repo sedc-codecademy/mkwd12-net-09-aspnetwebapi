@@ -26,7 +26,7 @@ namespace Qinshift.EShop.Services.Helpers
 
 			services.AddTransient<IRepository<Category>>(x => new CategoryAdoRepository(connectionString));
 			//services.AddTransient<IRepository<Category>>(x => new CategoryDapperRepository(connectionString));
-
+			services.AddTransient<IUserRepository, UserRepository>();
 			return services;
 		}
 	}

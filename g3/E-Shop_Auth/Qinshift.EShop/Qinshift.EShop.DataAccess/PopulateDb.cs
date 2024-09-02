@@ -91,6 +91,27 @@ namespace Qinshift.EShop.DataAccess
 						ProductId = 1
 					}
 				});
+
+			modelBuilder.Entity<User>()
+				.HasData(new List<User> 
+				{
+					new User
+					{
+						Id = 1, 
+						FirstName = "John",
+						LastName = "Doe",
+						UserName = "j_doe",
+						Password = "test123#"
+					},
+                    new User
+                    {
+                        Id = 2,
+                        FirstName = "Bob",
+                        LastName = "Bobsky",
+                        UserName = "bob_bobsky",
+                        Password = "test1234#"
+                    }
+                });
 		}
 	}
 }
