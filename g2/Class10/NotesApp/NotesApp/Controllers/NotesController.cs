@@ -7,6 +7,7 @@ using NotesApp.Shared.CustomException;
 
 namespace NotesApp.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class NotesController : ControllerBase
@@ -18,7 +19,6 @@ namespace NotesApp.Controllers
             _noteService = noteService;
         }
 
-        [Authorize]
         [HttpGet]
         public ActionResult<List<NoteDto>> GetAllNotes()
         {

@@ -53,12 +53,12 @@ namespace NotesApp.Services.Implementation
             //4. GENERATE JWT TOKEN
             JwtSecurityTokenHandler jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
 
-            byte[] secretKeyBytes = Encoding.ASCII.GetBytes("Our very secret key for noteApp");
+            byte[] secretKeyBytes = Encoding.ASCII.GetBytes("Our very secret key for noteApp secret new must be 256 characters");
 
             // set token
             SecurityTokenDescriptor securityTokenDescriptor = new SecurityTokenDescriptor()
             {
-                Expires = DateTime.UtcNow.AddHours(1),
+                Expires = DateTime.UtcNow.AddDays(1),
                 //signature configuration
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKeyBytes), SecurityAlgorithms.HmacSha256Signature),
                 //payload

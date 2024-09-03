@@ -78,16 +78,16 @@ namespace NotesApp.DataAccess.Extensions
         public static void SeedData(this ModelBuilder modelBuilder)
         {
             // Seed Users
-            modelBuilder.Entity<User>().HasData(
-                new User { Id = 1, FirstName = "Bob", LastName = "Bobsky", Username = "bobbobsky", Password = "password123" },
-                new User { Id = 2, FirstName = "Jane", LastName = "Smith", Username = "janesmith", Password = "password123" }
-            );
+            //modelBuilder.Entity<User>().HasData(
+            //    new User { Id = 1, FirstName = "Bob", LastName = "Bobsky", Username = "bobbobsky", Password = "password123" },
+            //    new User { Id = 2, FirstName = "Jane", LastName = "Smith", Username = "janesmith", Password = "password123" }
+            //);
 
             // Seed Notes
-            modelBuilder.Entity<Note>().HasData(
-                new Note { Id = 1, Text = "Complete project report", Priority = Priority.High, Tag = Tag.Work, UserId = 1 },
-                new Note { Id = 2, Text = "Go to the gym", Priority = Priority.Medium, Tag = Tag.Health, UserId = 2 }
-            );
+            //modelBuilder.Entity<Note>().HasData(
+            //    new Note { Id = 1, Text = "Complete project report", Priority = Priority.High, Tag = Tag.Work, UserId = 1 },
+            //    new Note { Id = 2, Text = "Go to the gym", Priority = Priority.Medium, Tag = Tag.Health, UserId = 2 }
+            //);
         }
     }
 }

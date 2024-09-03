@@ -38,10 +38,10 @@ builder.Services.AddAuthentication(x =>
         //validate token
         x.TokenValidationParameters = new TokenValidationParameters()
         {
-            ValidateActor = false,
+            ValidateAudience = false,
             ValidateIssuer = false,
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("Our very secret key for noteApp"))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("Our very secret key for noteApp secret new must be 256 characters"))
         };
     });
 
