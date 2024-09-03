@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NotesApp.DataAccess.Context;
+using NotesApp.DataAccess.Intefaces;
 using NotesApp.Domain.Models;
 
 namespace NotesApp.DataAccess.Implementations.EFImplementation
 {
-    public class UserRepository : IRepository<User>
+    public class UserRepository : IUserRepository
     {
         private NotesAppDbContext _notesAppDbCotext;
 
@@ -25,7 +26,8 @@ namespace NotesApp.DataAccess.Implementations.EFImplementation
 
         public void Add(User entity)
         {
-            throw new NotImplementedException();
+            _notesAppDbCotext.User.Add(entity);
+            _notesAppDbCotext.SaveChanges();
         }
 
         public void Update(User entity)
@@ -36,6 +38,16 @@ namespace NotesApp.DataAccess.Implementations.EFImplementation
         public void Delete(User entity)
         {
             throw new NotImplementedException();
+        }
+
+        public User LoginUser(string username, string hashedPassword)
+        {
+            return _notesAppDbCotext.User.FirstOrDefault(x => x.Username.ToLower() == username.ToLower() && x.Password == hashedPassword);
+        }
+
+        public User GetUserByUsername(string username)
+        {
+            return _notesAppDbCotext.User.FirstOrDefault(x => x.Username.ToLower() == username.ToLower());
         }
 
     }
