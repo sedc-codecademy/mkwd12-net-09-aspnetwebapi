@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="XAct.Core.PCL" Version="0.0.5014" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NoteApp.Dto\NotesApp.Dto.csproj" />
     <ProjectReference Include="..\NotesApp.DataAccess\NotesApp.DataAccess.csproj" />
     <ProjectReference Include="..\NotesApp.Mappers\NotesApp.Mappers.csproj" />
