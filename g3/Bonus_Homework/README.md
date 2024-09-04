@@ -1,6 +1,6 @@
-# Bonus Homework - For the breavest 💪
+# Bonus Homework - For the bravest 💪
 
-For the purpose of a liquer store that sells different type of beverages we need to create an API that will serve 
+For the purpose of a liquer store that sell different type of beverages we need to create an API that will serve 
 all the beverages data to the end user.
 
 ### Technical requierements:
@@ -8,7 +8,7 @@ all the beverages data to the end user.
 * Create an API using .net 6 framework  
 * The project should be structured nicely in order to accomplish decoupling and reusability of the things (classes, methods etc)
 * Every user should have access to all the beverages data and single beverage data
-* Every user can filter the beverages by type and/or bye name
+* Every user can filter the beverages by type and/or by name
 * Only the authenticated users in the system can also add, update or delete beverages from the system 
 * Only the authenticated users can make an order with only one beverage, or list of beverages.
 * When registering new user, validate if all the fields are provided corectly. 
@@ -23,10 +23,10 @@ The beverage entity should have
 
 The user entity should have
 * FirstName
-* UserName
+* LastName
 * Email
 * Password
-* ConfirmPassword 
+* ConfirmedPassword 
 
 In order to test the API use Postman. Create a collection so that you can share with us in order to test your API easily
 
