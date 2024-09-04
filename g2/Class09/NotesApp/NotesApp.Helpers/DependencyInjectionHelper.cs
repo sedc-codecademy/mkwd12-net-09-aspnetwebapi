@@ -14,17 +14,18 @@ namespace NotesApp.Helpers
         public static void InjectRepositories(IServiceCollection services)
         {
             // USE DAPPER repository
-            services.AddTransient<IRepository<Note>, NoteDapperRepository>();
+            //services.AddTransient<IRepository<Note>, NoteDapperRepository>();
             // USE ADO.NET repository
             //services.AddTransient<IRepository<Note>, NoteAdoNetRepository>();
             // USE EF repository
-            //services.AddTransient<IRepository<Note>, NoteRepository>();
+            services.AddTransient<IRepository<Note>, NoteRepository>();
             services.AddTransient<IRepository<User>, UserRepository>();
         }
 
         public static void InjectServices(IServiceCollection services)
         {
             services.AddTransient<INoteService, NoteService>();
+            services.AddTransient<IUserService, UserService>();
         }
     }
 }

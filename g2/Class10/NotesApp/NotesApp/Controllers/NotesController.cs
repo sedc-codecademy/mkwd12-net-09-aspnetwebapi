@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using NotesApp.Dto.NoteDto;
 using NotesApp.Services.Interface;
 using NotesApp.Shared.CustomException;
+using System.Security.Claims;
 
 namespace NotesApp.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class NotesController : ControllerBase
@@ -18,12 +20,17 @@ namespace NotesApp.Controllers
             _noteService = noteService;
         }
 
-        [Authorize]
         [HttpGet]
         public ActionResult<List<NoteDto>> GetAllNotes()
         {
             try
             {
+                //get username from token (Name Claim)
+                string name = User.Identity?.Name;
+
+                //get the name claim from token second
+                string username = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
+
                 return Ok(_noteService.GetAllNotes());
             }
             catch (Exception ex)

@@ -53,12 +53,12 @@ namespace NotesApp.Services.Implementation
             //4. GENERATE JWT TOKEN
             JwtSecurityTokenHandler jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
 
-            byte[] secretKeyBytes = Encoding.ASCII.GetBytes("Our very secret key for noteApp");
+            byte[] secretKeyBytes = Encoding.ASCII.GetBytes("Our very secret key for noteApp secret new must be 256 characters");
 
             // set token
             SecurityTokenDescriptor securityTokenDescriptor = new SecurityTokenDescriptor()
             {
-                Expires = DateTime.UtcNow.AddHours(1),
+                Expires = DateTime.UtcNow.AddDays(1),
                 //signature configuration
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKeyBytes), SecurityAlgorithms.HmacSha256Signature),
                 //payload
@@ -80,7 +80,67 @@ namespace NotesApp.Services.Implementation
 
         public void RegisterUser(RegisterUserDto registerUserDto)
         {
-            throw new NotImplementedException();
+            //1. VALIDATE
+            ValidateUser(registerUserDto);
+
+            //2. hash the password
+            //MD5 hash
+            MD5CryptoServiceProvider mD5CryptoServiceProvider = new MD5CryptoServiceProvider();
+
+            //Password123@ ---> 123123
+            byte[] passwordBytes = Encoding.ASCII.GetBytes(registerUserDto.Password);
+
+            //hash bytes 12241 --> 4413
+            byte[] hashBytes = mD5CryptoServiceProvider.ComputeHash(passwordBytes);
+
+            //get string hashed
+            string hashPassword = Encoding.ASCII.GetString(hashBytes);
+
+            //3. create user
+            User user = new User
+            {
+                Username = registerUserDto.Username,
+                Password = hashPassword, //hashed pass
+                FirstName = registerUserDto.FirstName,
+                LastName = registerUserDto.LastName
+            };
+
+            _userRepository.Add(user);
+        }
+
+        private void ValidateUser(RegisterUserDto registerUserDto)
+        {
+            if(string.IsNullOrEmpty(registerUserDto.Username) || string.IsNullOrEmpty(registerUserDto.Password))
+            {
+                throw new UserDataException("Username and password are required fields!");
+            }
+
+            if(registerUserDto.Username.Length > 50)
+            {
+                throw new UserDataException("Username: Maximum length for username is 50 charactesrs!!!");
+            }
+
+            if (string.IsNullOrEmpty(registerUserDto.FirstName) || string.IsNullOrEmpty(registerUserDto.LastName))
+            {
+                throw new UserDataException("FirstName and LastName are required fields!");
+            }
+
+            if(registerUserDto.FirstName.Length > 100 || registerUserDto.LastName.Length > 100)
+            {
+                throw new UserDataException("FirstName and LastName: Maximum length is 100 charactesrs!!!");
+            }
+
+            if(registerUserDto.Password != registerUserDto.ConfirmedPassword)
+            {
+                throw new UserDataException("Password must match!!!");
+            }
+
+            var userDb = _userRepository.GetUserByUsername(registerUserDto.Username);
+            if(userDb != null)
+            {
+                throw new UserDataException($"The username {registerUserDto.Username} already exits!!");
+            }
+
         }
     }
 }

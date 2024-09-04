@@ -50,24 +50,6 @@ namespace NotesApp.DataAccess.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Note", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Priority = 3,
-                            Tag = 1,
-                            Text = "Complete project report",
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Priority = 2,
-                            Tag = 2,
-                            Text = "Go to the gym",
-                            UserId = 2
-                        });
                 });
 
             modelBuilder.Entity("NotesApp.Domain.Models.User", b =>
@@ -104,24 +86,6 @@ namespace NotesApp.DataAccess.Migrations
                         .HasDatabaseName("IX_User_Username");
 
                     b.ToTable("User", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            FirstName = "Bob",
-                            LastName = "Bobsky",
-                            Password = "password123",
-                            Username = "bobbobsky"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            FirstName = "Jane",
-                            LastName = "Smith",
-                            Password = "password123",
-                            Username = "janesmith"
-                        });
                 });
 
             modelBuilder.Entity("NotesApp.Domain.Models.Note", b =>
