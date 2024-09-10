@@ -5,6 +5,7 @@
         public int? Sum(int num1, int num2)
         {
             var res = num1 + num2;
+            // int.MaxValue + 1 = -2_147.... Negative overflow
             if (num1 > 0 && num2 > 0 && res < 0) return null;
             return res;
         }
