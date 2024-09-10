@@ -30,7 +30,10 @@ namespace NotesApp.Controllers
                 //get the name claim from token second
                 string username = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
 
-                return Ok(_noteService.GetAllNotes());
+                // Get user id from the User Claims
+                var userId = User.FindFirstValue("userId");
+
+                return Ok(_noteService.GetAllNotes(int.Parse(userId)));
             }
             catch (Exception ex)
             {

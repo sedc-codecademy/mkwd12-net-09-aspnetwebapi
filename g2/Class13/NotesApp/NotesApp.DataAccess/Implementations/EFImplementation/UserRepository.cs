@@ -44,7 +44,7 @@ namespace NotesApp.DataAccess.Implementations.EFImplementation
 
         public User LoginUser(string username, string hasedPassword)
         {
-            return _notesAppDbCotext.User.FirstOrDefault(x => x.Username.Equals(username, StringComparison.InvariantCultureIgnoreCase) && x.Password == hasedPassword);
+            return _notesAppDbCotext.User.FirstOrDefault(x => x.Username == username && x.Password == hasedPassword);
         }
 
         public User GetUserByUsername(string username)

@@ -19,9 +19,15 @@ namespace NotesApp.Services.Implementation
             _userRepository = userRepository;
         }
 
-        public List<NoteDto> GetAllNotes()
+        public List<NoteDto> GetAllNotes(int userId)
         {
-            var notesDb = _noteRepository.GetAll();
+            var notesDb = _noteRepository.GetAll().Where(n => n.UserId == userId);
+
+            if (!notesDb.Any())
+            {
+                return new List<NoteDto>();
+            }
+
             return notesDb.Select(x => x.ToNoteDto()).ToList();
         }
 

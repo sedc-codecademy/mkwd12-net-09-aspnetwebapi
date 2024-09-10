@@ -28,20 +28,8 @@ namespace NotesApp.Services.Implementation
                 throw new UserDataException("Username and password are required fields!");
             }
 
-            //2.Hash the password
-
-            //2.1 MD5 hash algorithm
-            MD5CryptoServiceProvider mD5CryptoServiceProvider = new MD5CryptoServiceProvider();
-
-            //2.2 Password@1 ---> 6123612361
-            byte[] passwordByte = Encoding.ASCII.GetBytes(loginUserDto.Password);
-
-            //2.3 get bytes of the hash string 6123612361 --> 123123
-            byte[] hashBytes = mD5CryptoServiceProvider.ComputeHash(passwordByte);
-
-            //2.4 get the hash as string 123123 ---> asdasd75576asd7a6ds76asd
-            string hashPassword = Encoding.ASCII.GetString(hashBytes); //hasd pw
-
+            //2.Hash the password   
+            string hashPassword = HashPassword(loginUserDto.Password);
 
             //3. Validate user from db
             User userdb = _userRepository.LoginUser(loginUserDto.Username, hashPassword);
@@ -66,7 +54,8 @@ namespace NotesApp.Services.Implementation
                         new[]
                         {
                             new Claim(ClaimTypes.Name, userdb.Username),
-                            new Claim("userFullName", $"{userdb.FirstName} {userdb.LastName}")
+                            new Claim("userFullName", $"{userdb.FirstName} {userdb.LastName}"),
+                            new Claim("userId", userdb.Id.ToString())
                             //new Claim(ClaimTypes.Role, userdb.Role)
                         }
                     )
@@ -84,17 +73,7 @@ namespace NotesApp.Services.Implementation
             ValidateUser(registerUserDto);
 
             //2. hash the password
-            //MD5 hash
-            MD5CryptoServiceProvider mD5CryptoServiceProvider = new MD5CryptoServiceProvider();
-
-            //Password123@ ---> 123123
-            byte[] passwordBytes = Encoding.ASCII.GetBytes(registerUserDto.Password);
-
-            //hash bytes 12241 --> 4413
-            byte[] hashBytes = mD5CryptoServiceProvider.ComputeHash(passwordBytes);
-
-            //get string hashed
-            string hashPassword = Encoding.ASCII.GetString(hashBytes);
+            var hashPassword = HashPassword(registerUserDto.Password);
 
             //3. create user
             User user = new User
@@ -106,6 +85,23 @@ namespace NotesApp.Services.Implementation
             };
 
             _userRepository.Add(user);
+        }
+
+        private string HashPassword(string password)
+        {
+            //MD5 hash
+            MD5CryptoServiceProvider mD5CryptoServiceProvider = new MD5CryptoServiceProvider();
+
+            //Password123@ ---> 123123
+            byte[] passwordBytes = Encoding.ASCII.GetBytes(password);
+
+            //hash bytes 12241 --> 4413
+            byte[] hashBytes = mD5CryptoServiceProvider.ComputeHash(passwordBytes);
+
+            //get string hashed
+            string hashPassword = Encoding.ASCII.GetString(hashBytes);
+
+            return hashPassword;
         }
 
         private void ValidateUser(RegisterUserDto registerUserDto)
