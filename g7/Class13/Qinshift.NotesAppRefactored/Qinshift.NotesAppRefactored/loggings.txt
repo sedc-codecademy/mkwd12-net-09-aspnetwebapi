@@ -1,0 +1,535 @@
+2024-09-10 18:46:30.315 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 18:46:30.685 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 18:46:30.685 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 18:46:30.688 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 18:46:30.688 +02:00 [INF] Hosting environment: Development
+2024-09-10 18:46:30.688 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 18:46:31.347 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/swagger/index.html - -
+2024-09-10 18:46:31.739 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/swagger/index.html - - - 200 - text/html;charset=utf-8 395.1406ms
+2024-09-10 18:46:31.751 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 18:46:31.754 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 3.4499ms
+2024-09-10 18:46:31.764 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 18:46:31.820 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 55.7696ms
+2024-09-10 18:46:31.852 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/swagger/v1/swagger.json - -
+2024-09-10 18:46:32.017 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.4575ms
+2024-09-10 18:47:30.306 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7106/api/Users/register application/json 142
+2024-09-10 18:47:30.316 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.Register (Qinshift.NotesAppRefactored)'
+2024-09-10 18:47:30.333 +02:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(Qinshift.NotesAppRefactored.Dtos.UserDtos.RegisterUserDto) on controller Qinshift.NotesAppRefactored.Controllers.UsersController (Qinshift.NotesAppRefactored).
+2024-09-10 18:47:35.673 +02:00 [INF] Registration model info: FirstName: Michael, LastName: Jordan
+2024-09-10 18:47:39.582 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 18:47:41.279 +02:00 [INF] Executed DbCommand (58ms) [Parameters=[@__ToLower_0='?' (Size = 30)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2024-09-10 18:47:44.546 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50), @p2='?' (Size = 4000), @p3='?' (Size = 30)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([FirstName], [LastName], [Password], [Username])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-09-10 18:47:44.593 +02:00 [INF] Successfully registered: MJordan23
+2024-09-10 18:47:44.598 +02:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-09-10 18:47:44.603 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.UsersController.Register (Qinshift.NotesAppRefactored) in 14265.323ms
+2024-09-10 18:47:44.603 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.Register (Qinshift.NotesAppRefactored)'
+2024-09-10 18:47:44.610 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7106/api/Users/register application/json 142 - 201 - text/plain;+charset=utf-8 14303.9468ms
+2024-09-10 18:48:14.599 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7106/api/Users/login application/json 56
+2024-09-10 18:48:14.619 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 18:48:14.620 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(Qinshift.NotesAppRefactored.Dtos.UserDtos.LoginUserDto) on controller Qinshift.NotesAppRefactored.Controllers.UsersController (Qinshift.NotesAppRefactored).
+2024-09-10 18:48:14.634 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 18:48:14.642 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__hashedPassword_1)
+2024-09-10 18:48:14.809 +02:00 [INF] User MJordan23 has logged in!
+2024-09-10 18:48:14.809 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-09-10 18:48:14.809 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored) in 189.3656ms
+2024-09-10 18:48:14.809 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 18:48:14.809 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7106/api/Users/login application/json 56 - 200 - text/plain;+charset=utf-8 210.5885ms
+2024-09-10 18:48:44.985 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/api/Notes/1 - -
+2024-09-10 18:48:44.986 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetById (Qinshift.NotesAppRefactored)'
+2024-09-10 18:48:44.995 +02:00 [INF] Route matched with {action = "GetById", controller = "Notes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto] GetById(Int32) on controller Qinshift.NotesAppRefactored.Controllers.NotesController (Qinshift.NotesAppRefactored).
+2024-09-10 18:48:45.079 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 18:48:45.151 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [n].[Id], [n].[Priority], [n].[Tag], [n].[Text], [n].[UserId], [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Notes] AS [n]
+INNER JOIN [Users] AS [u] ON [n].[UserId] = [u].[Id]
+WHERE [n].[Id] = @__id_0
+2024-09-10 18:48:45.170 +02:00 [INF] Retrieved note $text note 1
+2024-09-10 18:48:45.171 +02:00 [INF] Executing OkObjectResult, writing value of type 'Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto'.
+2024-09-10 18:48:45.175 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.NotesController.GetById (Qinshift.NotesAppRefactored) in 179.4333ms
+2024-09-10 18:48:45.175 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetById (Qinshift.NotesAppRefactored)'
+2024-09-10 18:48:45.175 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/api/Notes/1 - - - 200 - application/json;+charset=utf-8 189.8673ms
+2024-09-10 19:10:42.098 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 19:10:42.369 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 19:10:42.369 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 19:10:42.372 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 19:10:42.372 +02:00 [INF] Hosting environment: Development
+2024-09-10 19:10:42.372 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 19:10:42.774 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/swagger/index.html - -
+2024-09-10 19:10:43.122 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/swagger/index.html - - - 200 - text/html;charset=utf-8 351.0868ms
+2024-09-10 19:10:43.136 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 19:10:43.139 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 3.3827ms
+2024-09-10 19:10:43.151 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 19:10:43.206 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 54.5792ms
+2024-09-10 19:10:43.238 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/swagger/v1/swagger.json - -
+2024-09-10 19:10:43.394 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 155.4821ms
+2024-09-10 20:25:31.903 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 20:25:32.519 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 20:25:32.520 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 20:25:32.522 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 20:25:32.522 +02:00 [INF] Hosting environment: Development
+2024-09-10 20:25:32.522 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 20:25:33.097 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/swagger/index.html - -
+2024-09-10 20:25:33.445 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/swagger/index.html - - - 200 - text/html;charset=utf-8 350.6516ms
+2024-09-10 20:25:33.450 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:25:33.454 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 3.2704ms
+2024-09-10 20:25:33.469 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:25:33.545 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 75.3345ms
+2024-09-10 20:25:33.577 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/swagger/v1/swagger.json - -
+2024-09-10 20:25:33.712 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 134.4575ms
+2024-09-10 20:26:50.345 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 20:26:50.729 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 20:26:50.729 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 20:26:50.734 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 20:26:50.734 +02:00 [INF] Hosting environment: Development
+2024-09-10 20:26:50.734 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 20:26:51.285 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/register.html - -
+2024-09-10 20:26:51.472 +02:00 [INF] Sending file. Request path: '/register.html'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\register.html'
+2024-09-10 20:26:51.476 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/register.html - - - 200 - text/html 193.9702ms
+2024-09-10 20:26:51.483 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/register.js - -
+2024-09-10 20:26:51.483 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:26:51.483 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:26:51.487 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 3.9766ms
+2024-09-10 20:26:51.520 +02:00 [INF] Sending file. Request path: '/register.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\register.js'
+2024-09-10 20:26:51.521 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/register.js - - - 200 1148 application/javascript 37.7275ms
+2024-09-10 20:26:51.540 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 56.8051ms
+2024-09-10 20:27:49.649 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7106/api/users/register application/json 141
+2024-09-10 20:27:49.783 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.Register (Qinshift.NotesAppRefactored)'
+2024-09-10 20:27:49.800 +02:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(Qinshift.NotesAppRefactored.Dtos.UserDtos.RegisterUserDto) on controller Qinshift.NotesAppRefactored.Controllers.UsersController (Qinshift.NotesAppRefactored).
+2024-09-10 20:27:50.190 +02:00 [INF] Registration model info: FirstName: Testsubject1, LastName: Testsubject1
+2024-09-10 20:27:51.125 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:27:52.903 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__ToLower_0='?' (Size = 30)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2024-09-10 20:27:53.085 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50), @p2='?' (Size = 4000), @p3='?' (Size = 30)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([FirstName], [LastName], [Password], [Username])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2024-09-10 20:27:53.139 +02:00 [INF] Successfully registered: Testsubject1
+2024-09-10 20:27:53.141 +02:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-09-10 20:27:53.152 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.UsersController.Register (Qinshift.NotesAppRefactored) in 3341.723ms
+2024-09-10 20:27:53.152 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.Register (Qinshift.NotesAppRefactored)'
+2024-09-10 20:27:53.156 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.html - -
+2024-09-10 20:27:53.166 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7106/api/users/register application/json 141 - 201 - text/plain;+charset=utf-8 3517.3698ms
+2024-09-10 20:27:53.193 +02:00 [INF] Sending file. Request path: '/login.html'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\login.html'
+2024-09-10 20:27:53.194 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.html - - - 200 - text/html 38.3931ms
+2024-09-10 20:27:53.204 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.js - -
+2024-09-10 20:27:53.204 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:27:53.204 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:27:53.204 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.5337ms
+2024-09-10 20:27:53.225 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.6684ms
+2024-09-10 20:27:53.232 +02:00 [INF] Sending file. Request path: '/login.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\login.js'
+2024-09-10 20:27:53.232 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.js - - - 200 2029 application/javascript 28.7406ms
+2024-09-10 20:30:23.766 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 20:30:24.117 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 20:30:24.117 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 20:30:24.120 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 20:30:24.120 +02:00 [INF] Hosting environment: Development
+2024-09-10 20:30:24.120 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 20:30:24.826 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:30:24.826 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:30:24.846 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 22.8869ms
+2024-09-10 20:30:24.926 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 104.1900ms
+2024-09-10 20:30:33.467 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:30:33.467 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:30:33.468 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.2240ms
+2024-09-10 20:30:33.485 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.7252ms
+2024-09-10 20:31:29.386 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.html - -
+2024-09-10 20:31:29.509 +02:00 [INF] The file /login.html was not modified
+2024-09-10 20:31:29.510 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.html - - - 304 - text/html 124.2137ms
+2024-09-10 20:31:29.535 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:31:29.536 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:31:29.536 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.4087ms
+2024-09-10 20:31:29.552 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.4771ms
+2024-09-10 20:31:35.558 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 20:31:35.858 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 20:31:35.858 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 20:31:35.863 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 20:31:35.863 +02:00 [INF] Hosting environment: Development
+2024-09-10 20:31:35.863 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 20:31:36.623 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:31:36.623 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:31:36.638 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 17.3201ms
+2024-09-10 20:31:36.711 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 91.4213ms
+2024-09-10 20:31:47.340 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:31:47.340 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:31:47.340 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.js - -
+2024-09-10 20:31:47.340 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.7069ms
+2024-09-10 20:31:47.360 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.7717ms
+2024-09-10 20:31:47.427 +02:00 [INF] Sending file. Request path: '/login.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\login.js'
+2024-09-10 20:31:47.428 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.js - - - 200 2027 application/javascript 88.4648ms
+2024-09-10 20:31:56.908 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7106/api/users/login application/json 53
+2024-09-10 20:31:56.995 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:31:57.010 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(Qinshift.NotesAppRefactored.Dtos.UserDtos.LoginUserDto) on controller Qinshift.NotesAppRefactored.Controllers.UsersController (Qinshift.NotesAppRefactored).
+2024-09-10 20:31:58.007 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:31:58.884 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__hashedPassword_1)
+2024-09-10 20:31:59.218 +02:00 [INF] User Testsubject1 has logged in!
+2024-09-10 20:31:59.221 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-09-10 20:31:59.227 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored) in 2211.8003ms
+2024-09-10 20:31:59.228 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:31:59.235 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7106/api/users/login application/json 53 - 200 - text/plain;+charset=utf-8 2327.6830ms
+2024-09-10 20:32:29.531 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.html - -
+2024-09-10 20:32:29.616 +02:00 [INF] The file /login.html was not modified
+2024-09-10 20:32:29.616 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.html - - - 304 - text/html 85.3253ms
+2024-09-10 20:32:29.644 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:32:29.645 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:32:29.645 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.4231ms
+2024-09-10 20:32:29.645 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.js - -
+2024-09-10 20:32:29.657 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.2151ms
+2024-09-10 20:32:29.670 +02:00 [INF] Sending file. Request path: '/login.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\login.js'
+2024-09-10 20:32:29.670 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.js - - - 200 2029 application/javascript 24.8423ms
+2024-09-10 20:32:33.709 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.html - -
+2024-09-10 20:32:33.717 +02:00 [INF] The file /login.html was not modified
+2024-09-10 20:32:33.717 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.html - - - 304 - text/html 7.4829ms
+2024-09-10 20:32:33.742 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.js - -
+2024-09-10 20:32:33.744 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:32:33.747 +02:00 [INF] Sending file. Request path: '/login.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\login.js'
+2024-09-10 20:32:33.747 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:32:33.748 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.5441ms
+2024-09-10 20:32:33.747 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.js - - - 200 2029 application/javascript 5.9469ms
+2024-09-10 20:32:33.765 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.8103ms
+2024-09-10 20:32:37.120 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 20:32:37.471 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 20:32:37.471 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 20:32:37.474 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 20:32:37.474 +02:00 [INF] Hosting environment: Development
+2024-09-10 20:32:37.474 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 20:32:38.146 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:32:38.146 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/register.js - -
+2024-09-10 20:32:38.146 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:32:38.160 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 16.7933ms
+2024-09-10 20:32:38.214 +02:00 [INF] The file /register.js was not modified
+2024-09-10 20:32:38.215 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/register.js - - - 304 - application/javascript 71.8054ms
+2024-09-10 20:32:38.235 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 91.7663ms
+2024-09-10 20:32:45.672 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:32:45.672 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.js - -
+2024-09-10 20:32:45.672 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:32:45.673 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.4436ms
+2024-09-10 20:32:45.673 +02:00 [INF] The file /login.js was not modified
+2024-09-10 20:32:45.673 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.js - - - 304 - application/javascript 0.6788ms
+2024-09-10 20:32:45.692 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.0399ms
+2024-09-10 20:32:53.549 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7106/api/users/login application/json 53
+2024-09-10 20:32:53.647 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:32:53.663 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(Qinshift.NotesAppRefactored.Dtos.UserDtos.LoginUserDto) on controller Qinshift.NotesAppRefactored.Controllers.UsersController (Qinshift.NotesAppRefactored).
+2024-09-10 20:32:54.628 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:32:55.480 +02:00 [INF] Executed DbCommand (54ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__hashedPassword_1)
+2024-09-10 20:32:55.686 +02:00 [INF] User Testsubject1 has logged in!
+2024-09-10 20:32:55.691 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-09-10 20:32:55.697 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored) in 2028.5976ms
+2024-09-10 20:32:55.697 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:32:55.705 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7106/api/users/login application/json 53 - 200 - text/plain;+charset=utf-8 2156.5967ms
+2024-09-10 20:36:29.273 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.html - -
+2024-09-10 20:36:29.354 +02:00 [INF] The file /login.html was not modified
+2024-09-10 20:36:29.354 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.html - - - 304 - text/html 82.1108ms
+2024-09-10 20:36:29.382 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:36:29.382 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:36:29.382 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.js - -
+2024-09-10 20:36:29.382 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.3973ms
+2024-09-10 20:36:29.391 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.0348ms
+2024-09-10 20:36:29.426 +02:00 [INF] Sending file. Request path: '/login.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\login.js'
+2024-09-10 20:36:29.426 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.js - - - 200 2029 application/javascript 44.5121ms
+2024-09-10 20:36:33.154 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 20:36:33.546 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 20:36:33.546 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 20:36:33.550 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 20:36:33.550 +02:00 [INF] Hosting environment: Development
+2024-09-10 20:36:33.551 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 20:36:34.127 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/register.html - -
+2024-09-10 20:36:34.267 +02:00 [INF] The file /register.html was not modified
+2024-09-10 20:36:34.273 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/register.html - - - 304 - text/html 148.2835ms
+2024-09-10 20:36:34.293 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:36:34.293 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:36:34.298 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 4.7533ms
+2024-09-10 20:36:34.346 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.5648ms
+2024-09-10 20:36:39.856 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.js - -
+2024-09-10 20:36:39.856 +02:00 [INF] The file /login.js was not modified
+2024-09-10 20:36:39.857 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.js - - - 304 - application/javascript 0.9091ms
+2024-09-10 20:36:39.859 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:36:39.860 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:36:39.860 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.3733ms
+2024-09-10 20:36:39.879 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.6615ms
+2024-09-10 20:36:47.999 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7106/api/users/login application/json 53
+2024-09-10 20:36:48.091 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:36:48.106 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(Qinshift.NotesAppRefactored.Dtos.UserDtos.LoginUserDto) on controller Qinshift.NotesAppRefactored.Controllers.UsersController (Qinshift.NotesAppRefactored).
+2024-09-10 20:36:49.074 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:36:49.929 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__hashedPassword_1)
+2024-09-10 20:36:50.132 +02:00 [INF] User Testsubject1 has logged in!
+2024-09-10 20:36:50.138 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-09-10 20:36:50.143 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored) in 2031.7935ms
+2024-09-10 20:36:50.143 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:36:50.153 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.html - -
+2024-09-10 20:36:50.154 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7106/api/users/login application/json 53 - 200 - text/plain;+charset=utf-8 2154.7749ms
+2024-09-10 20:36:50.198 +02:00 [INF] Sending file. Request path: '/note.html'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\note.html'
+2024-09-10 20:36:50.198 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.html - - - 200 - text/html 45.1795ms
+2024-09-10 20:36:50.201 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.js - -
+2024-09-10 20:36:50.202 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:36:50.202 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:36:50.202 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.3990ms
+2024-09-10 20:36:50.205 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 3.6268ms
+2024-09-10 20:36:50.230 +02:00 [INF] Sending file. Request path: '/note.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\note.js'
+2024-09-10 20:36:50.231 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.js - - - 200 1790 application/javascript 30.3859ms
+2024-09-10 20:37:56.201 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.html - -
+2024-09-10 20:37:56.204 +02:00 [INF] The file /note.html was not modified
+2024-09-10 20:37:56.204 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.html - - - 304 - text/html 2.9589ms
+2024-09-10 20:37:56.225 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:37:56.225 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:37:56.225 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.6620ms
+2024-09-10 20:37:56.229 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 3.8803ms
+2024-09-10 20:38:03.923 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 20:38:04.282 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 20:38:04.282 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 20:38:04.284 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 20:38:04.285 +02:00 [INF] Hosting environment: Development
+2024-09-10 20:38:04.285 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 20:38:04.855 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:38:04.855 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:38:04.870 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 18.5398ms
+2024-09-10 20:38:04.948 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 97.0707ms
+2024-09-10 20:38:13.306 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.js - -
+2024-09-10 20:38:13.306 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:38:13.309 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:38:13.310 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.9317ms
+2024-09-10 20:38:13.315 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 8.8529ms
+2024-09-10 20:38:13.352 +02:00 [INF] The file /login.js was not modified
+2024-09-10 20:38:13.353 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.js - - - 304 - application/javascript 46.4665ms
+2024-09-10 20:38:22.444 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7106/api/users/login application/json 53
+2024-09-10 20:38:22.542 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:38:22.558 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(Qinshift.NotesAppRefactored.Dtos.UserDtos.LoginUserDto) on controller Qinshift.NotesAppRefactored.Controllers.UsersController (Qinshift.NotesAppRefactored).
+2024-09-10 20:38:23.548 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:38:24.462 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__hashedPassword_1)
+2024-09-10 20:38:24.671 +02:00 [INF] User Testsubject1 has logged in!
+2024-09-10 20:38:24.677 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-09-10 20:38:24.683 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored) in 2119.7504ms
+2024-09-10 20:38:24.683 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:38:24.691 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7106/api/users/login application/json 53 - 200 - text/plain;+charset=utf-8 2247.1567ms
+2024-09-10 20:38:28.382 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:38:28.382 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:38:28.382 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.js - -
+2024-09-10 20:38:28.382 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.3998ms
+2024-09-10 20:38:28.396 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.1136ms
+2024-09-10 20:38:28.426 +02:00 [INF] Sending file. Request path: '/note.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\note.js'
+2024-09-10 20:38:28.429 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.js - - - 200 1789 application/javascript 46.1987ms
+2024-09-10 20:39:14.738 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.html - -
+2024-09-10 20:39:14.823 +02:00 [INF] The file /note.html was not modified
+2024-09-10 20:39:14.823 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.html - - - 304 - text/html 85.6367ms
+2024-09-10 20:39:14.845 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.js - -
+2024-09-10 20:39:14.849 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:39:14.855 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:39:14.856 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.9908ms
+2024-09-10 20:39:14.861 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 11.8230ms
+2024-09-10 20:39:14.871 +02:00 [INF] Sending file. Request path: '/note.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\note.js'
+2024-09-10 20:39:14.871 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.js - - - 200 1791 application/javascript 25.9677ms
+2024-09-10 20:39:36.240 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.html - -
+2024-09-10 20:39:36.251 +02:00 [INF] The file /note.html was not modified
+2024-09-10 20:39:36.251 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.html - - - 304 - text/html 10.8176ms
+2024-09-10 20:39:36.286 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.js - -
+2024-09-10 20:39:36.287 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:39:36.287 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:39:36.287 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.5892ms
+2024-09-10 20:39:36.296 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.0414ms
+2024-09-10 20:39:36.310 +02:00 [INF] Sending file. Request path: '/note.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\note.js'
+2024-09-10 20:39:36.310 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.js - - - 200 1794 application/javascript 24.2359ms
+2024-09-10 20:39:40.184 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 20:39:40.566 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 20:39:40.566 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 20:39:40.568 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 20:39:40.568 +02:00 [INF] Hosting environment: Development
+2024-09-10 20:39:40.569 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 20:39:41.109 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:39:41.109 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/register.js - -
+2024-09-10 20:39:41.109 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:39:41.124 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 17.9064ms
+2024-09-10 20:39:41.190 +02:00 [INF] The file /register.js was not modified
+2024-09-10 20:39:41.190 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/register.js - - - 304 - application/javascript 85.0296ms
+2024-09-10 20:39:41.214 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 108.9377ms
+2024-09-10 20:39:46.794 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.js - -
+2024-09-10 20:39:46.794 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:39:46.794 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:39:46.795 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.3186ms
+2024-09-10 20:39:46.795 +02:00 [INF] The file /login.js was not modified
+2024-09-10 20:39:46.795 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.js - - - 304 - application/javascript 0.6085ms
+2024-09-10 20:39:46.810 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.9379ms
+2024-09-10 20:39:53.667 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7106/api/users/login application/json 53
+2024-09-10 20:39:53.764 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:39:53.779 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(Qinshift.NotesAppRefactored.Dtos.UserDtos.LoginUserDto) on controller Qinshift.NotesAppRefactored.Controllers.UsersController (Qinshift.NotesAppRefactored).
+2024-09-10 20:39:54.776 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:39:55.737 +02:00 [INF] Executed DbCommand (62ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__hashedPassword_1)
+2024-09-10 20:39:55.942 +02:00 [INF] User Testsubject1 has logged in!
+2024-09-10 20:39:55.948 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-09-10 20:39:55.953 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored) in 2168.5564ms
+2024-09-10 20:39:55.953 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:39:55.961 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7106/api/users/login application/json 53 - 200 - text/plain;+charset=utf-8 2293.6943ms
+2024-09-10 20:39:57.467 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.js - -
+2024-09-10 20:39:57.468 +02:00 [INF] The file /note.js was not modified
+2024-09-10 20:39:57.468 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.js - - - 304 - application/javascript 0.5386ms
+2024-09-10 20:39:57.472 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:39:57.479 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:39:57.480 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.5080ms
+2024-09-10 20:39:57.481 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.3325ms
+2024-09-10 20:40:08.038 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/api/Notes - -
+2024-09-10 20:40:08.110 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored)'
+2024-09-10 20:40:08.111 +02:00 [INF] Route matched with {action = "GetAll", controller = "Notes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto]] GetAll() on controller Qinshift.NotesAppRefactored.Controllers.NotesController (Qinshift.NotesAppRefactored).
+2024-09-10 20:40:08.114 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:40:08.193 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Priority], [n].[Tag], [n].[Text], [n].[UserId], [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Notes] AS [n]
+INNER JOIN [Users] AS [u] ON [n].[UserId] = [u].[Id]
+2024-09-10 20:40:08.269 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto, Qinshift.NotesAppRefactored.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 20:40:08.288 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored) in 177.4528ms
+2024-09-10 20:40:08.288 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored)'
+2024-09-10 20:40:08.288 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/api/Notes - - - 200 - application/json;+charset=utf-8 250.8045ms
+2024-09-10 20:40:21.233 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/api/Notes - -
+2024-09-10 20:40:21.235 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored)'
+2024-09-10 20:40:21.235 +02:00 [INF] Route matched with {action = "GetAll", controller = "Notes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto]] GetAll() on controller Qinshift.NotesAppRefactored.Controllers.NotesController (Qinshift.NotesAppRefactored).
+2024-09-10 20:40:21.272 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:40:21.276 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Priority], [n].[Tag], [n].[Text], [n].[UserId], [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Notes] AS [n]
+INNER JOIN [Users] AS [u] ON [n].[UserId] = [u].[Id]
+2024-09-10 20:40:21.276 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto, Qinshift.NotesAppRefactored.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 20:40:21.276 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored) in 40.8224ms
+2024-09-10 20:40:21.276 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored)'
+2024-09-10 20:40:21.276 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/api/Notes - - - 200 - application/json;+charset=utf-8 43.7479ms
+2024-09-10 20:40:41.869 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 20:40:42.202 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 20:40:42.202 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 20:40:42.205 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 20:40:42.205 +02:00 [INF] Hosting environment: Development
+2024-09-10 20:40:42.205 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 20:40:43.037 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:40:43.037 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:40:43.051 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 17.1615ms
+2024-09-10 20:40:43.132 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 98.4509ms
+2024-09-10 20:40:49.422 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/login.js - -
+2024-09-10 20:40:49.422 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:40:49.423 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:40:49.423 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.5510ms
+2024-09-10 20:40:49.443 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.0766ms
+2024-09-10 20:40:49.473 +02:00 [INF] The file /login.js was not modified
+2024-09-10 20:40:49.473 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/login.js - - - 304 - application/javascript 50.9001ms
+2024-09-10 20:40:56.539 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7106/api/users/login application/json 53
+2024-09-10 20:40:56.634 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:40:56.650 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(Qinshift.NotesAppRefactored.Dtos.UserDtos.LoginUserDto) on controller Qinshift.NotesAppRefactored.Controllers.UsersController (Qinshift.NotesAppRefactored).
+2024-09-10 20:40:57.677 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:40:58.557 +02:00 [INF] Executed DbCommand (51ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__hashedPassword_1)
+2024-09-10 20:40:58.766 +02:00 [INF] User Testsubject1 has logged in!
+2024-09-10 20:40:58.772 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-09-10 20:40:58.777 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored) in 2122.3788ms
+2024-09-10 20:40:58.777 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.UsersController.LoginUser (Qinshift.NotesAppRefactored)'
+2024-09-10 20:40:58.785 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7106/api/users/login application/json 53 - 200 - text/plain;+charset=utf-8 2246.2292ms
+2024-09-10 20:41:00.535 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.html - -
+2024-09-10 20:41:00.612 +02:00 [INF] The file /note.html was not modified
+2024-09-10 20:41:00.612 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.html - - - 304 - text/html 76.1581ms
+2024-09-10 20:41:00.635 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.js - -
+2024-09-10 20:41:00.635 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:41:00.636 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:41:00.636 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.4700ms
+2024-09-10 20:41:00.640 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.0165ms
+2024-09-10 20:41:00.664 +02:00 [INF] Sending file. Request path: '/note.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\note.js'
+2024-09-10 20:41:00.664 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.js - - - 200 1823 application/javascript 29.3164ms
+2024-09-10 20:41:04.924 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/api/Notes - -
+2024-09-10 20:41:04.993 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored)'
+2024-09-10 20:41:04.993 +02:00 [INF] Route matched with {action = "GetAll", controller = "Notes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto]] GetAll() on controller Qinshift.NotesAppRefactored.Controllers.NotesController (Qinshift.NotesAppRefactored).
+2024-09-10 20:41:04.996 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:41:05.075 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Priority], [n].[Tag], [n].[Text], [n].[UserId], [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Notes] AS [n]
+INNER JOIN [Users] AS [u] ON [n].[UserId] = [u].[Id]
+2024-09-10 20:41:05.109 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto, Qinshift.NotesAppRefactored.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 20:41:05.129 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored) in 135.6913ms
+2024-09-10 20:41:05.129 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored)'
+2024-09-10 20:41:05.129 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/api/Notes - - - 200 - application/json;+charset=utf-8 205.5873ms
+2024-09-10 20:41:37.578 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 20:41:37.896 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 20:41:37.897 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 20:41:37.900 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 20:41:37.900 +02:00 [INF] Hosting environment: Development
+2024-09-10 20:41:37.900 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 20:41:38.467 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:41:38.467 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:41:38.481 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 16.5947ms
+2024-09-10 20:41:38.561 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 96.6104ms
+2024-09-10 20:41:46.039 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/notes.html - -
+2024-09-10 20:41:46.246 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/notes.html - - - 404 0 - 207.3745ms
+2024-09-10 20:41:50.438 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:41:50.438 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:41:50.439 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.js - -
+2024-09-10 20:41:50.439 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.6379ms
+2024-09-10 20:41:50.452 +02:00 [INF] The file /note.js was not modified
+2024-09-10 20:41:50.453 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.js - - - 304 - application/javascript 14.8691ms
+2024-09-10 20:41:50.456 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.5164ms
+2024-09-10 20:41:54.379 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/api/Notes - -
+2024-09-10 20:41:54.571 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored)'
+2024-09-10 20:41:54.577 +02:00 [INF] Route matched with {action = "GetAll", controller = "Notes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto]] GetAll() on controller Qinshift.NotesAppRefactored.Controllers.NotesController (Qinshift.NotesAppRefactored).
+2024-09-10 20:41:55.530 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:41:56.360 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Priority], [n].[Tag], [n].[Text], [n].[UserId], [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Notes] AS [n]
+INNER JOIN [Users] AS [u] ON [n].[UserId] = [u].[Id]
+2024-09-10 20:41:56.475 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto, Qinshift.NotesAppRefactored.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 20:41:56.498 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored) in 1915.8517ms
+2024-09-10 20:41:56.498 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored)'
+2024-09-10 20:41:56.505 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/api/Notes - - - 200 - application/json;+charset=utf-8 2125.7681ms
+2024-09-10 20:42:30.635 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.html - -
+2024-09-10 20:42:30.670 +02:00 [INF] Sending file. Request path: '/note.html'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\note.html'
+2024-09-10 20:42:30.671 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.html - - - 200 - text/html 35.7421ms
+2024-09-10 20:42:30.705 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/note.js - -
+2024-09-10 20:42:30.710 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 20:42:30.710 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 0.5142ms
+2024-09-10 20:42:30.710 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 20:42:30.725 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.1729ms
+2024-09-10 20:42:30.726 +02:00 [INF] Sending file. Request path: '/note.js'. Physical path: 'C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\wwwroot\note.js'
+2024-09-10 20:42:30.727 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/note.js - - - 200 1823 application/javascript 21.5018ms
+2024-09-10 20:42:30.749 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/favicon.ico - -
+2024-09-10 20:42:30.752 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/favicon.ico - - - 404 0 - 2.9481ms
+2024-09-10 20:42:39.114 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/api/Notes - -
+2024-09-10 20:42:39.115 +02:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-09-10 20:42:39.115 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 20:42:39.123 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-09-10 20:42:39.123 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/api/Notes - - - 401 0 - 9.2065ms
+2024-09-10 20:43:08.494 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/api/Notes - -
+2024-09-10 20:43:08.496 +02:00 [INF] Executing endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored)'
+2024-09-10 20:43:08.496 +02:00 [INF] Route matched with {action = "GetAll", controller = "Notes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto]] GetAll() on controller Qinshift.NotesAppRefactored.Controllers.NotesController (Qinshift.NotesAppRefactored).
+2024-09-10 20:43:08.516 +02:00 [INF] Entity Framework Core 6.0.8 initialized 'NotesAppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2024-09-10 20:43:08.530 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Priority], [n].[Tag], [n].[Text], [n].[UserId], [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Notes] AS [n]
+INNER JOIN [Users] AS [u] ON [n].[UserId] = [u].[Id]
+2024-09-10 20:43:08.531 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Qinshift.NotesAppRefactored.Dtos.NoteDtos.NoteDto, Qinshift.NotesAppRefactored.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 20:43:08.531 +02:00 [INF] Executed action Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored) in 34.9801ms
+2024-09-10 20:43:08.531 +02:00 [INF] Executed endpoint 'Qinshift.NotesAppRefactored.Controllers.NotesController.GetAll (Qinshift.NotesAppRefactored)'
+2024-09-10 20:43:08.531 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/api/Notes - - - 200 - application/json;+charset=utf-8 36.7092ms
