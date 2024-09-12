@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NotesAndTagsApp.DataAccess\NotesAndTagsApp.DataAccess.csproj" />
+    <ProjectReference Include="..\NotesAndTagsApp.DTOs\NotesAndTagsApp.DTOs.csproj" />
+    <ProjectReference Include="..\NotesAndTagsApp.Mappers\NotesAndTagsApp.Mappers.csproj" />
+    <ProjectReference Include="..\NotesAndTagsApp.Shared\NotesAndTagsApp.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
