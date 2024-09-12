@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Qinshift.NotesAppRefactored.Dtos.NoteDtos;
 using Qinshift.NotesAppRefactored.Services.Interfaces;
 using Qinshift.NotesAppRefactored.Shared.CustomExceptions.NoteExceptions;
+using Serilog;
 
 namespace Qinshift.NotesAppRefactored.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class NotesController : ControllerBase
@@ -37,6 +38,8 @@ namespace Qinshift.NotesAppRefactored.Controllers
             try
             {
                 var noteDto = _noteService.GetById(id);
+                //Log.Information($"Note with id {id} was fetched!");
+                Log.Information($"Retrieved note ${noteDto.Text}");
                 return Ok(noteDto); // status code 200/ok
             }
             catch (NoteNotFoundException ex)
@@ -51,6 +54,8 @@ namespace Qinshift.NotesAppRefactored.Controllers
             try
             {
                 _noteService.AddNote(addNoteDto);
+                //Not best practice to provide the user id in the log => just for demo purposes
+                Log.Information($"Note with text {addNoteDto.Text} was added from user {addNoteDto.UserId}");
                 return StatusCode(StatusCodes.Status201Created, "Note Created");
             }
             catch (NoteDataException ex)
