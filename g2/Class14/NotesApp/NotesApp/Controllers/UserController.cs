@@ -48,6 +48,7 @@ namespace NotesApp.Controllers
                 Log.Error(ex, "An unexpected error occured while logging in user: {User}. Message {Message}", loginUserDto.Username, ex.Message);
                 //return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError, "System error occured, contact admin!");
+                // TIP: It's considered good practice to retrive generic error message where unexpected errors may occure (both for security and user experience)
             }
 
         }
@@ -58,11 +59,14 @@ namespace NotesApp.Controllers
         {
             try
             {
+                Log.Information("Processing registration for new user: {Username}", registerUserDto.Username);
                 _userService.RegisterUser(registerUserDto);
+                Log.Information("User registered successfully: {Username}", registerUserDto.Username);
                 return StatusCode(StatusCodes.Status201Created, "User created!");
             }
             catch (UserDataException ex)
             {
+                Log.Warning("Registration failed for user: {Username}. Reason: {Message}", registerUserDto.Username, ex.Message);
                 return BadRequest(ex.Message);
             }
             catch (Exception ex)
