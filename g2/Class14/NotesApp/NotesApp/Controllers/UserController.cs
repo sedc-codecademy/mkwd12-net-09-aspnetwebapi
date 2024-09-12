@@ -5,6 +5,7 @@ using NotesApp.Dto.UserDto;
 using NotesApp.Services.Interfaces;
 using NotesApp.Shared.CustomException;
 using Serilog;
+using System.Diagnostics;
 
 namespace NotesApp.Controllers
 {
@@ -26,6 +27,7 @@ namespace NotesApp.Controllers
         {
             try
             {
+                Debug.WriteLine("Log something in Output window");
                 Log.Information("Processing login attempt for user: {Username}", loginUserDto.Username);
                 string token = _userService.LoginUser(loginUserDto);
                 Log.Information("User successfully logged in: {Username}", loginUserDto.Username);
@@ -43,7 +45,9 @@ namespace NotesApp.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                Log.Error(ex, "An unexpected error occured while logging in user: {User}. Message {Message}", loginUserDto.Username, ex.Message);
+                //return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, "System error occured, contact admin!");
             }
 
         }
@@ -63,7 +67,8 @@ namespace NotesApp.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                Log.Error(ex, "An unexpected error occured while registering in user: {User}. Message {Message}", registerUserDto.Username, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, "System error occured, contact admin!");
             }
         }
     }

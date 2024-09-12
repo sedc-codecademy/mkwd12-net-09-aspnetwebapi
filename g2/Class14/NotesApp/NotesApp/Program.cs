@@ -1,11 +1,8 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using NotesApp.DataAccess.Context;
 using NotesApp.Helpers;
 using NotesApp.Shared.Configuration;
 using Serilog;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,14 +13,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // ===> Configure Serilog
-Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Information()
-    .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
-    .MinimumLevel.Override("System", Serilog.Events.LogEventLevel.Warning)
-    .WriteTo.Console()
-    .WriteTo.File(path: "./Logs/noteAppLogs.txt", outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] : {Message}{NewLine:1}{Exception:1}")
-    .CreateLogger();
-
+// Log.Logger => the globally shared logger
+Log.Logger = ConfigurationsHelper.GetSerilogConfiguration();
+// Use Serilog as the logging provider
 builder.Host.UseSerilog();
     
 // ===> Another approach for managing configurations
@@ -60,6 +52,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// app.UseSerilogRequestLogging(); // Logs every request
 
 //app.UseCors("AllowSpecificOrigins"); // Use the defined CORS policy
 app.UseCors("AllowAll"); // Use the "AllowAll" CORS policy
