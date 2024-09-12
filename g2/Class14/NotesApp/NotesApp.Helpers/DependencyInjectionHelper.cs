@@ -12,7 +12,7 @@ namespace NotesApp.Helpers
 {
     public static class DependencyInjectionHelper
     {
-        public static void InjectRepositories(IServiceCollection services)
+        public static void InjectRepositories(this IServiceCollection services)
         {
             // USE DAPPER repository
             //services.AddTransient<IRepository<Note>, NoteDapperRepository>();
@@ -23,7 +23,7 @@ namespace NotesApp.Helpers
             services.AddTransient<IUserRepository, UserRepository>();
         }
 
-        public static void InjectServices(IServiceCollection services)
+        public static void InjectServices(this IServiceCollection services)
         {
             services.AddTransient<INoteService, NoteService>();
             services.AddTransient<IUserService, UserService>();

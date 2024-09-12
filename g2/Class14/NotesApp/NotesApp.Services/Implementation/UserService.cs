@@ -1,8 +1,10 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using NotesApp.DataAccess.Interfaces;
 using NotesApp.Domain.Models;
 using NotesApp.Dto.UserDto;
 using NotesApp.Services.Interfaces;
+using NotesApp.Shared.Configuration;
 using NotesApp.Shared.CustomException;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -14,10 +16,13 @@ namespace NotesApp.Services.Implementation
     public class UserService : IUserService
     {
         private IUserRepository _userRepository;
+        private NotesAppSettings _settings;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IOptions<NotesAppSettings> options)
         {
             _userRepository = userRepository;
+            // Using the IOptions pattern to retrive the configuration values of the NotesAppSettings
+            _settings = options.Value;
         }
 
         public string LoginUser(LoginUserDto loginUserDto)
@@ -35,13 +40,14 @@ namespace NotesApp.Services.Implementation
             User userdb = _userRepository.LoginUser(loginUserDto.Username, hashPassword);
             if (userdb == null)
             {
-                throw new UserNotFoundException("User not foud!!!");
+                throw new UserNotFoundException("User not found!!!");
             }
 
             //4. GENERATE JWT TOKEN
             JwtSecurityTokenHandler jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
 
-            byte[] secretKeyBytes = Encoding.ASCII.GetBytes("Our very secret key for noteApp secret new must be 256 characters");
+            //byte[] secretKeyBytes = Encoding.ASCII.GetBytes("Our very secret key for noteApp secret new must be 256 characters"); // BAD WAY
+            byte[] secretKeyBytes = Encoding.ASCII.GetBytes(_settings.SecretKey);
 
             // set token
             SecurityTokenDescriptor securityTokenDescriptor = new SecurityTokenDescriptor()

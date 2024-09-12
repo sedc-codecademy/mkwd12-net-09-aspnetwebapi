@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using NotesApp.Dto.UserDto;
 using NotesApp.Services.Interfaces;
 using NotesApp.Shared.CustomException;
+using Serilog;
 
 namespace NotesApp.Controllers
 {
@@ -25,15 +26,19 @@ namespace NotesApp.Controllers
         {
             try
             {
+                Log.Information("Processing login attempt for user: {Username}", loginUserDto.Username);
                 string token = _userService.LoginUser(loginUserDto);
+                Log.Information("User successfully logged in: {Username}", loginUserDto.Username);
                 return Ok(token);
             }
             catch (UserDataException ex)
             {
+                Log.Error(ex, "Login failed for user: {Username}. Reason: {Message}", loginUserDto.Username, ex.Message);
                 return BadRequest(ex.Message);
             }
             catch (UserNotFoundException ex)
             {
+                Log.Warning("Login failed for user: {Username}. Reason: {Message}", loginUserDto.Username, ex.Message);
                 return NotFound(ex.Message);
             }
             catch (Exception ex)
