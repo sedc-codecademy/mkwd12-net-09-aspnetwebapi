@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lucene.Net" Version="3.0.3" />
+    <PackageReference Include="XAct.Core.PCL" Version="0.0.5014" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NoteApp.Dto\NotesApp.Dto.csproj" />
+    <ProjectReference Include="..\NotesApp.DataAccess\NotesApp.DataAccess.csproj" />
+    <ProjectReference Include="..\NotesApp.Mappers\NotesApp.Mappers.csproj" />
+    <ProjectReference Include="..\NotesApp.Shared\NotesApp.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
