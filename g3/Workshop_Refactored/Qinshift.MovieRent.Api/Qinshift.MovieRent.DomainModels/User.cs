@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Qinshift.MovieRent.DomainModels
+﻿namespace Qinshift.MovieRent.DomainModels
 {
     public class User : BaseEntity
     {
