@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Qinshift.MovieRent.DTOs;
 using Qinshift.MovieRent.Services.Interface;
+using Serilog;
 
 namespace Qinshift.MovieRent.Api.Controllers
 {
@@ -29,12 +30,13 @@ namespace Qinshift.MovieRent.Api.Controllers
             }
             catch (Exception ex)
             {
+                Log.Error(ex, "Register new user failed.");
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
         [HttpPost("login")]
-        public IActionResult RegisterUser([FromBody] LoginDto user)
+        public IActionResult Login([FromBody] LoginDto user)
         {
             try
             {
@@ -47,6 +49,7 @@ namespace Qinshift.MovieRent.Api.Controllers
             }
             catch (Exception ex)
             {
+                Log.Error(ex, $"Error while login user.");
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }

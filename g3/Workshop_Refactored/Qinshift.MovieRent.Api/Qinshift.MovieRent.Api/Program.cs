@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Serilog;
 
 namespace Qinshift.MovieRent.Api
 {
@@ -18,6 +19,13 @@ namespace Qinshift.MovieRent.Api
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Host.UseSerilog((ctx, lc) =>
+            {
+                lc.WriteTo.File($"logs.txt", 
+                    outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}");
+                lc.MinimumLevel.Debug();
+            });
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(opt =>
@@ -95,7 +103,11 @@ namespace Qinshift.MovieRent.Api
             app.UseAuthentication();
             app.UseAuthorization();
 
-
+            app.UseCors(x =>
+            {
+                x.AllowAnyOrigin();
+            });
+            app.UseStaticFiles();
             app.MapControllers();
 
             app.Run();
