@@ -41,7 +41,7 @@ builder.Services.InjectServices();
 // ===> Configure JWT
 builder.Services.ConfigureAuthentication(notesAppSettings.SecretKey);
 
-// ===> Add CORS service
+// ===> Add CORS Policy
 builder.Services.ConfigureCORSPolicy();
 
 var app = builder.Build();
@@ -55,8 +55,8 @@ if (app.Environment.IsDevelopment())
 
 // app.UseSerilogRequestLogging(); // Logs every request
 
-//app.UseCors("AllowSpecificOrigins"); // Use the defined CORS policy
-app.UseCors("AllowAll"); // Use the "AllowAll" CORS policy
+app.UseCors("AllowSpecificOrigins"); // Use the defined CORS policy
+//app.UseCors("AllowAll"); // Use the "AllowAll" CORS policy
 
 app.UseHttpsRedirection();
 

@@ -38,16 +38,16 @@ namespace NotesApp.Helpers
         public static void ConfigureCORSPolicy(this IServiceCollection services)
         {
             // ===> Add CORS service
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy("AllowSpecificOrigins",
-            //        policy =>
-            //        {
-            //            policy.WithOrigins("https://example.com") // Replace with your allowed origins
-            //                  .AllowAnyHeader()
-            //                  .AllowAnyMethod();
-            //        });
-            //});
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigins",
+                    policy =>
+                    {
+                        policy.WithOrigins("https://example.com", "http://127.0.0.1:5500") // Replace with your allowed origins
+                              .AllowAnyHeader()
+                              .AllowAnyMethod();
+                    });
+            });
 
             // ===> Add CORS service to allow all origins
             services.AddCors(options =>

@@ -70,7 +70,34 @@ function validateCredentials(e) {
 }
 
 async function loginUser(e) {
+    e.preventDefault();
+    const username = usernameInput.value;
+    const password = passwordInput.value;
 
+    if (!username || !password) {
+        return;
+    }
+
+    const loginDto = new LoginRequest(username, password);
+
+    const response = await fetch(`${BASE_URL}/User/Login`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(loginDto)
+    });
+
+    if (!response.ok) {
+        loginError.textContent = "Invalid credentials!";
+        return;
+    }
+
+    const result = await response.text();
+    if (result) {
+        localStorage.setItem("accesstoken", result);
+        showNotesMenu();
+    }
 }
 
 function showNotesMenu() {
@@ -79,7 +106,24 @@ function showNotesMenu() {
 }
 
 async function getNotes(e) {
+    e.preventDefault();
+    const token = localStorage.getItem("accesstoken");
+    if (!token) {
+        return;
+    }
 
+    const response = await fetch(`${BASE_URL}/notes`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+        }
+    })
+
+    if (response.ok) {
+        const data = await response.json();
+        renderNotes(data);
+    }
 }
 
 function renderNotes(notes) {
