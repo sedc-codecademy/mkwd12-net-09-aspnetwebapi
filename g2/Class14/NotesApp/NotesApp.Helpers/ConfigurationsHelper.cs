@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using System.Text;
 
 namespace NotesApp.Helpers
@@ -57,6 +58,23 @@ namespace NotesApp.Helpers
                               .AllowAnyMethod();  // Allows all methods
                     });
             });
+        }
+
+        public static ILogger GetSerilogConfiguration()
+        {
+            return new LoggerConfiguration()
+                    // Default log level
+                    .MinimumLevel.Information()
+                    // Only log warnings and errors from Microsoft
+                    .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
+                    // Only log warnings and errors from System
+                    .MinimumLevel.Override("System", Serilog.Events.LogEventLevel.Warning)
+                    // ===> Logging destinations (Serilog Sinks)
+                    // ==> Log in Console
+                    .WriteTo.Console(outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] : {Message}{NewLine:1}{Exception:1}")
+                    // ==> Log in Text file
+                    .WriteTo.File(path: "./Logs/noteAppLogs.txt", outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] : {Message}{NewLine:1}{Exception:1}")
+                    .CreateLogger();
         }
     }
 }

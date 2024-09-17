@@ -1,0 +1,17 @@
+* {
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+.move-right {
+    transform: translateX(150px);
+    transition: transform 0.01s ease-out;
+}
+
+.move-left {
+    transform: translateX(-150px);
+    transition: transform 0.01s ease-out;
+}

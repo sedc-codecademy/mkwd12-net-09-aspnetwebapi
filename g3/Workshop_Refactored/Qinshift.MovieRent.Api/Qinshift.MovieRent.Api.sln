@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.MovieRent.Api", "Qinshift.MovieRent.Api\Qinshift.MovieRent.Api.csproj", "{193754D9-64FA-41DF-8ED3-3A79B9A62D59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.MovieRent.Api", "Qinshift.MovieRent.Api\Qinshift.MovieRent.Api.csproj", "{193754D9-64FA-41DF-8ED3-3A79B9A62D59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.MovieRent.DomainModels", "Qinshift.MovieRent.DomainModels\Qinshift.MovieRent.DomainModels.csproj", "{458D057A-6BCA-45B3-9943-B2F0EA2966E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.MovieRent.DomainModels", "Qinshift.MovieRent.DomainModels\Qinshift.MovieRent.DomainModels.csproj", "{458D057A-6BCA-45B3-9943-B2F0EA2966E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.MovieRent.DataAccess", "Qinshift.MovieRent.DataAccess\Qinshift.MovieRent.DataAccess.csproj", "{F23491D2-CC2D-47D2-825C-7CCD704D5FF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.MovieRent.DataAccess", "Qinshift.MovieRent.DataAccess\Qinshift.MovieRent.DataAccess.csproj", "{F23491D2-CC2D-47D2-825C-7CCD704D5FF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.MovieRent.Services", "Qinshift.MovieRent.Services\Qinshift.MovieRent.Services.csproj", "{6DCC8198-C6D7-4A89-839E-8EC5DC7250EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.MovieRent.Services", "Qinshift.MovieRent.Services\Qinshift.MovieRent.Services.csproj", "{6DCC8198-C6D7-4A89-839E-8EC5DC7250EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.MovieRent.DTOs", "Qinshift.MovieRent.DTOs\Qinshift.MovieRent.DTOs.csproj", "{3A05E0FC-5264-473B-8BDD-F037537763E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.MovieRent.DTOs", "Qinshift.MovieRent.DTOs\Qinshift.MovieRent.DTOs.csproj", "{3A05E0FC-5264-473B-8BDD-F037537763E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.MovieRent.ConsoleApp", "Qinshift.MovieRent.ConsoleApp\Qinshift.MovieRent.ConsoleApp.csproj", "{02288389-BA24-44C5-A449-9B7D81175DF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3A05E0FC-5264-473B-8BDD-F037537763E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A05E0FC-5264-473B-8BDD-F037537763E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A05E0FC-5264-473B-8BDD-F037537763E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02288389-BA24-44C5-A449-9B7D81175DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02288389-BA24-44C5-A449-9B7D81175DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02288389-BA24-44C5-A449-9B7D81175DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02288389-BA24-44C5-A449-9B7D81175DF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

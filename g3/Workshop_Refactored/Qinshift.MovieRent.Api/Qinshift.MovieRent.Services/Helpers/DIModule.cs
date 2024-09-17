@@ -21,6 +21,7 @@ namespace Qinshift.MovieRent.Services.Helpers
         {
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IMovieRepository, MovieRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
 
             return services;
         }

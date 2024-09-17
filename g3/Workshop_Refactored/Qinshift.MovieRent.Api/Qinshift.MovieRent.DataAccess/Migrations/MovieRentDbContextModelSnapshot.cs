@@ -56,7 +56,7 @@ namespace Qinshift.MovieRent.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2024, 8, 26, 19, 41, 2, 956, DateTimeKind.Local).AddTicks(2638),
+                            CreatedOn = new DateTime(2024, 9, 15, 13, 32, 0, 431, DateTimeKind.Local).AddTicks(1744),
                             Genre = 1,
                             Plot = "A concierge teams up with one of his employees to prove his innocence after he is framed for murder.",
                             ReleaseDate = new DateTime(2014, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -65,7 +65,7 @@ namespace Qinshift.MovieRent.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedOn = new DateTime(2024, 8, 26, 19, 41, 2, 956, DateTimeKind.Local).AddTicks(2686),
+                            CreatedOn = new DateTime(2024, 9, 15, 13, 32, 0, 431, DateTimeKind.Local).AddTicks(1787),
                             Genre = 1,
                             Plot = "Two high school friends attempt to make it to a party before they go off to college.",
                             ReleaseDate = new DateTime(2007, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -74,7 +74,7 @@ namespace Qinshift.MovieRent.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedOn = new DateTime(2024, 8, 26, 19, 41, 2, 956, DateTimeKind.Local).AddTicks(2689),
+                            CreatedOn = new DateTime(2024, 9, 15, 13, 32, 0, 431, DateTimeKind.Local).AddTicks(1791),
                             Genre = 2,
                             Plot = "In a post-apocalyptic world, Max teams up with Furiosa to escape a tyrant and his army.",
                             ReleaseDate = new DateTime(2015, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -83,7 +83,7 @@ namespace Qinshift.MovieRent.DataAccess.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedOn = new DateTime(2024, 8, 26, 19, 41, 2, 956, DateTimeKind.Local).AddTicks(2692),
+                            CreatedOn = new DateTime(2024, 9, 15, 13, 32, 0, 431, DateTimeKind.Local).AddTicks(1793),
                             Genre = 2,
                             Plot = "A NYPD officer tries to save his wife and others taken hostage by German terrorists during a Christmas party.",
                             ReleaseDate = new DateTime(1988, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -92,7 +92,7 @@ namespace Qinshift.MovieRent.DataAccess.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedOn = new DateTime(2024, 8, 26, 19, 41, 2, 956, DateTimeKind.Local).AddTicks(2694),
+                            CreatedOn = new DateTime(2024, 9, 15, 13, 32, 0, 431, DateTimeKind.Local).AddTicks(1796),
                             Genre = 3,
                             Plot = "A man becomes the focus of an intense media circus when his wife disappears and he is suspected of murder.",
                             ReleaseDate = new DateTime(2014, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -101,7 +101,7 @@ namespace Qinshift.MovieRent.DataAccess.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedOn = new DateTime(2024, 8, 26, 19, 41, 2, 956, DateTimeKind.Local).AddTicks(2699),
+                            CreatedOn = new DateTime(2024, 9, 15, 13, 32, 0, 431, DateTimeKind.Local).AddTicks(1800),
                             Genre = 3,
                             Plot = "A thief who enters the dreams of others is given the chance to erase his criminal record by planting an idea into someone's subconscious.",
                             ReleaseDate = new DateTime(2010, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -110,7 +110,7 @@ namespace Qinshift.MovieRent.DataAccess.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedOn = new DateTime(2024, 8, 26, 19, 41, 2, 956, DateTimeKind.Local).AddTicks(2701),
+                            CreatedOn = new DateTime(2024, 9, 15, 13, 32, 0, 431, DateTimeKind.Local).AddTicks(1803),
                             Genre = 4,
                             Plot = "Paranormal investigators help a family terrorized by a dark presence in their farmhouse.",
                             ReleaseDate = new DateTime(2013, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -119,7 +119,7 @@ namespace Qinshift.MovieRent.DataAccess.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedOn = new DateTime(2024, 8, 26, 19, 41, 2, 956, DateTimeKind.Local).AddTicks(2704),
+                            CreatedOn = new DateTime(2024, 9, 15, 13, 32, 0, 431, DateTimeKind.Local).AddTicks(1806),
                             Genre = 4,
                             Plot = "A young African-American man visits his white girlfriend's family estate, where he uncovers a disturbing secret.",
                             ReleaseDate = new DateTime(2017, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -128,7 +128,7 @@ namespace Qinshift.MovieRent.DataAccess.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedOn = new DateTime(2024, 8, 26, 19, 41, 2, 956, DateTimeKind.Local).AddTicks(2706),
+                            CreatedOn = new DateTime(2024, 9, 15, 13, 32, 0, 431, DateTimeKind.Local).AddTicks(1808),
                             Genre = 5,
                             Plot = "Two imprisoned men bond over a number of ReleaseDates, finding solace and eventual redemption through acts of common decency.",
                             ReleaseDate = new DateTime(1994, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -137,12 +137,48 @@ namespace Qinshift.MovieRent.DataAccess.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedOn = new DateTime(2024, 8, 26, 19, 41, 2, 956, DateTimeKind.Local).AddTicks(2709),
+                            CreatedOn = new DateTime(2024, 9, 15, 13, 32, 0, 431, DateTimeKind.Local).AddTicks(1811),
                             Genre = 5,
                             Plot = "The story of a man with a low IQ, who achieves great things in life despite the odds.",
                             ReleaseDate = new DateTime(1994, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Forrest Gump"
                         });
+                });
+
+            modelBuilder.Entity("Qinshift.MovieRent.DomainModels.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ConfirmPassword")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

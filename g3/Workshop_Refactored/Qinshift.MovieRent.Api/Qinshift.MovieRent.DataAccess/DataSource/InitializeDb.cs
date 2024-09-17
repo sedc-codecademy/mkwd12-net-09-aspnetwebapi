@@ -88,6 +88,21 @@ namespace Qinshift.MovieRent.DataAccess.DataSource
                 Genre = Genre.Drama
             }
                });
+
+            builder.Entity<User>()
+                .HasData(new List<User>
+                {
+                    new User
+                    {
+                        Id = 1,
+                        FirstName = "Bob",
+                        LastName = "Bobsky",
+                        UserName = "bob-bobsky",
+                        Password = "test123",
+                        ConfirmPassword = "test123",
+                        CreatedOn = DateTime.Now
+                    }
+                });
         }
     }
 }

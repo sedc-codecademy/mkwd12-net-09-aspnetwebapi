@@ -1,0 +1,6 @@
+@Qinshift.Class12.Api_HostAddress = http://localhost:5054
+
+GET {{Qinshift.Class12.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
