@@ -12,12 +12,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// ===> Configure Serilog
-// Log.Logger => the globally shared logger
-Log.Logger = ConfigurationsHelper.GetSerilogConfiguration();
-// Use Serilog as the logging provider
-builder.Host.UseSerilog();
-    
 // ===> Another approach for managing configurations
 // Retrieve the "NotesAppSettings" section from appsettings.json
 var notesSettings = builder.Configuration.GetSection("NotesAppSettings");
@@ -25,6 +19,12 @@ var notesSettings = builder.Configuration.GetSection("NotesAppSettings");
 builder.Services.Configure<NotesAppSettings>(notesSettings);
 // Directly use instance of NotesAppSettings in Program.cs
 NotesAppSettings notesAppSettings = notesSettings.Get<NotesAppSettings>();
+
+// ===> Configure Serilog
+// Log.Logger => the globally shared logger
+Log.Logger = ConfigurationsHelper.GetSerilogConfiguration(notesAppSettings.ConnectionString);
+// Use Serilog as the logging provider
+builder.Host.UseSerilog();
 
 // ===> Register Database
 //string connectionString = "Server=.\\SQLEXPRESS;Database=NotesAppDb;Trusted_Connection=True;Integrated Security=True;Encrypt=False;"; BAD WAY

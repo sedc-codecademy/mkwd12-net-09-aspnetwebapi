@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
+using Serilog.Events;
+using Serilog.Sinks.MSSqlServer;
 using System.Text;
 
 namespace NotesApp.Helpers
@@ -60,7 +62,7 @@ namespace NotesApp.Helpers
             });
         }
 
-        public static ILogger GetSerilogConfiguration()
+        public static ILogger GetSerilogConfiguration(string connectionString)
         {
             return new LoggerConfiguration()
                     // Default log level
@@ -74,6 +76,19 @@ namespace NotesApp.Helpers
                     .WriteTo.Console(outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] : {Message}{NewLine:1}{Exception:1}")
                     // ==> Log in Text file
                     .WriteTo.File(path: "./Logs/noteAppLogs.txt", outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] : {Message}{NewLine:1}{Exception:1}")
+                    // ===> Log to database table (BONUS)
+                    .WriteTo.MSSqlServer(
+                        connectionString: connectionString,
+                        sinkOptions: new MSSqlServerSinkOptions
+                        {
+                            TableName = "Logs",
+                            SchemaName = "dbo",
+                            AutoCreateSqlTable = true, // Automatically create the table if it doesn't exist
+                            // NOTE: Better way is to create migration for the Logs table and set this to 'false'
+                        },
+                        restrictedToMinimumLevel : LogEventLevel.Information
+                    //columnOptions: new ColumnOptions { } // Define custom columns
+                    )
                     .CreateLogger();
         }
     }
