@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.NotesAppRefactored", "Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored.csproj", "{E4C93079-75F9-4CFE-8D1C-823D0D378464}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.NotesAppRefactored.Data", "Qinshift.NotesAppRefactored.Data\Qinshift.NotesAppRefactored.Data.csproj", "{D8462967-B6C6-415F-8967-1E64DA6C2E9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.NotesAppRefactored.Mappers", "Qinshift.NotesAppRefactored.Mappers\Qinshift.NotesAppRefactored.Mappers.csproj", "{D46E2480-272E-4BA3-B91D-B21DA1F40B7C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.NotesAppRefactored.Services", "Qinshift.NotesAppRefactored.Services\Qinshift.NotesAppRefactored.Services.csproj", "{6F6BAFFC-0DC3-4670-BC4A-461887B9A767}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.NotesAppRefactored.Dtos", "Qinshift.NotesAppRefactored.Dtos\Qinshift.NotesAppRefactored.Dtos.csproj", "{05CADEAA-8BB6-416F-B9F6-9D67F3300F99}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.NotesAppRefactored.Shared", "Qinshift.NotesAppRefactored.Shared\Qinshift.NotesAppRefactored.Shared.csproj", "{8ADB43CE-27AD-4B73-A450-31584C0543A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.NotesAppRefactored.Domain", "Qinshift.NotesAppRefactored.Domain\Qinshift.NotesAppRefactored.Domain.csproj", "{346B1C82-1A25-47A7-8679-94655851B932}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.NotesAppRefactored.Helpers", "Qinshift.NotesAppRefactored.Helpers\Qinshift.NotesAppRefactored.Helpers.csproj", "{EBE31A3B-1B48-4790-8F0F-A6BD74EC85E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.NotesAppRefactored.Tests", "Qinshift.NotesAppRefactored.Tests\Qinshift.NotesAppRefactored.Tests.csproj", "{642EEC45-7B9F-4F78-A262-D025D252DE91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4C93079-75F9-4CFE-8D1C-823D0D378464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4C93079-75F9-4CFE-8D1C-823D0D378464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4C93079-75F9-4CFE-8D1C-823D0D378464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4C93079-75F9-4CFE-8D1C-823D0D378464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8462967-B6C6-415F-8967-1E64DA6C2E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8462967-B6C6-415F-8967-1E64DA6C2E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8462967-B6C6-415F-8967-1E64DA6C2E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8462967-B6C6-415F-8967-1E64DA6C2E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D46E2480-272E-4BA3-B91D-B21DA1F40B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46E2480-272E-4BA3-B91D-B21DA1F40B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46E2480-272E-4BA3-B91D-B21DA1F40B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46E2480-272E-4BA3-B91D-B21DA1F40B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F6BAFFC-0DC3-4670-BC4A-461887B9A767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F6BAFFC-0DC3-4670-BC4A-461887B9A767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F6BAFFC-0DC3-4670-BC4A-461887B9A767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F6BAFFC-0DC3-4670-BC4A-461887B9A767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05CADEAA-8BB6-416F-B9F6-9D67F3300F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05CADEAA-8BB6-416F-B9F6-9D67F3300F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05CADEAA-8BB6-416F-B9F6-9D67F3300F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05CADEAA-8BB6-416F-B9F6-9D67F3300F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ADB43CE-27AD-4B73-A450-31584C0543A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ADB43CE-27AD-4B73-A450-31584C0543A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ADB43CE-27AD-4B73-A450-31584C0543A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ADB43CE-27AD-4B73-A450-31584C0543A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{346B1C82-1A25-47A7-8679-94655851B932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346B1C82-1A25-47A7-8679-94655851B932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346B1C82-1A25-47A7-8679-94655851B932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346B1C82-1A25-47A7-8679-94655851B932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE31A3B-1B48-4790-8F0F-A6BD74EC85E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE31A3B-1B48-4790-8F0F-A6BD74EC85E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE31A3B-1B48-4790-8F0F-A6BD74EC85E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE31A3B-1B48-4790-8F0F-A6BD74EC85E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{642EEC45-7B9F-4F78-A262-D025D252DE91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{642EEC45-7B9F-4F78-A262-D025D252DE91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{642EEC45-7B9F-4F78-A262-D025D252DE91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{642EEC45-7B9F-4F78-A262-D025D252DE91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8F74860-9626-4DD4-8523-13B787C6A055}
+	EndGlobalSection
+EndGlobal
