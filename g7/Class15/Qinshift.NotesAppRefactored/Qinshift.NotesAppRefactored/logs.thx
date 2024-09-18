@@ -1,0 +1,14 @@
+2024-09-10 18:45:53.455 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 18:45:53.951 +02:00 [INF] Now listening on: https://localhost:7106
+2024-09-10 18:45:53.951 +02:00 [INF] Now listening on: http://localhost:5298
+2024-09-10 18:45:53.956 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 18:45:53.956 +02:00 [INF] Hosting environment: Development
+2024-09-10 18:45:53.956 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\WebApi\StudentsRepo\mkwd12-net-09-aspnetwebapi\g7\Class13\Qinshift.NotesAppRefactored\Qinshift.NotesAppRefactored\
+2024-09-10 18:45:55.105 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/swagger/index.html - -
+2024-09-10 18:45:55.538 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/swagger/index.html - - - 200 - text/html;charset=utf-8 437.5089ms
+2024-09-10 18:45:55.548 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - -
+2024-09-10 18:45:55.552 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_framework/aspnetcore-browser-refresh.js - - - 200 13790 application/javascript;+charset=utf-8 4.7215ms
+2024-09-10 18:45:55.566 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/_vs/browserLink - -
+2024-09-10 18:45:55.633 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 66.4533ms
+2024-09-10 18:45:55.665 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7106/swagger/v1/swagger.json - -
+2024-09-10 18:45:55.830 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7106/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.8170ms
