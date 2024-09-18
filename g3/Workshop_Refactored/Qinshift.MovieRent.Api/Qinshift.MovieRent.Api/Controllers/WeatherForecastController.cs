@@ -29,5 +29,14 @@ namespace Qinshift.MovieRent.Api.Controllers
             })
             .ToArray();
         }
+
+        //[HttpGet(Name = "Test")]
+        //public IEnumerable<WeatherForecast> Test()
+        //{
+        //    throw new NotImplementedException("Test");
+        //    throw new NullReferenceException("Test 1");
+        //    throw new OutOfMemoryException("Test 2");
+        //    throw new ArgumentOutOfRangeException("Test 3");
+        //}
     }
 }

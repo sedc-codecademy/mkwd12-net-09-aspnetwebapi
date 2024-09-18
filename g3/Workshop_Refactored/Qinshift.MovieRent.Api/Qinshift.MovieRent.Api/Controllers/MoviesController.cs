@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Qinshift.MovieRent.Services.Interface;
+using Qinshift.MovieRent.Shared.Exceptions;
 using Serilog;
 using System.Diagnostics;
 
@@ -9,7 +10,7 @@ namespace Qinshift.MovieRent.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class MoviesController : ControllerBase
     {
         private readonly IMovieService _movieService;
@@ -33,7 +34,16 @@ namespace Qinshift.MovieRent.Api.Controllers
                 stopwatch.Stop();
                 Log.Debug($"Fetch movies finished in:{stopwatch.ElapsedMilliseconds}");
 
-                return Ok(movies);
+                if(movies != null && movies.Any())
+                {
+                    return Ok(movies);
+                }
+                throw new MovieDataException("There are not movies yet in the database.");
+            }
+            catch (MovieDataException ex)
+            {
+                Log.Error(ex, "Error occured while fetching all movies.");
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
             catch (Exception ex)
             {
@@ -55,22 +65,33 @@ namespace Qinshift.MovieRent.Api.Controllers
                 {
                     return BadRequest("Id must have positive value!");
                 }
-                return Ok(_movieService.GetMovieById(id));
+                var movie = _movieService.GetMovieById(id);
+                if (movie == null)
+                    throw new MovieNotFoundException($"Movie with Id:{id} not found.");
+                return Ok(movie);
             }
-            catch (Exception ex)
+            catch (MovieNotFoundException ex)
             {
                 Log.Error($"Error occured while fetching movie with Id: {id}.", ex);
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
+            catch (Exception ex)
+            {
+                
+                Log.Error($"Error occured while fetching movie with Id: {id}.", ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
-
 
         [HttpGet("queryString")]
         public IActionResult GetByIdQueryString([FromQuery] int id)
         {
             try
             {
-                return Ok(_movieService.GetMovieById(id));
+                var queryString = HttpContext.Request.QueryString;
+                if(queryString.Value.Contains('='))
+                    return Ok(_movieService.GetMovieById(id));
+                throw new QueryStringNotInCorrectFormatException("Query string not in correct format.");
             }
             catch (Exception ex)
             {
@@ -78,7 +99,6 @@ namespace Qinshift.MovieRent.Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-
 
         [HttpGet("filterMovies")]
         public IActionResult FilterMovies(string genre, int year)

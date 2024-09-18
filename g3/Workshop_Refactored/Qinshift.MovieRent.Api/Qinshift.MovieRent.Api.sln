@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.MovieRent.Services
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.MovieRent.DTOs", "Qinshift.MovieRent.DTOs\Qinshift.MovieRent.DTOs.csproj", "{3A05E0FC-5264-473B-8BDD-F037537763E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.MovieRent.ConsoleApp", "Qinshift.MovieRent.ConsoleApp\Qinshift.MovieRent.ConsoleApp.csproj", "{02288389-BA24-44C5-A449-9B7D81175DF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qinshift.MovieRent.ConsoleApp", "Qinshift.MovieRent.ConsoleApp\Qinshift.MovieRent.ConsoleApp.csproj", "{02288389-BA24-44C5-A449-9B7D81175DF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qinshift.MovieRent.Shared", "Qinshift.MovieRent.Shared\Qinshift.MovieRent.Shared.csproj", "{40E776CB-5AB2-4FEE-8E4B-B2B3FC6997C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{02288389-BA24-44C5-A449-9B7D81175DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02288389-BA24-44C5-A449-9B7D81175DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02288389-BA24-44C5-A449-9B7D81175DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E776CB-5AB2-4FEE-8E4B-B2B3FC6997C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E776CB-5AB2-4FEE-8E4B-B2B3FC6997C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E776CB-5AB2-4FEE-8E4B-B2B3FC6997C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E776CB-5AB2-4FEE-8E4B-B2B3FC6997C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

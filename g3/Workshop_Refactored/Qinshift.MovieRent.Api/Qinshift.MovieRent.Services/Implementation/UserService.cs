@@ -1,4 +1,6 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using AutoMapper;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Qinshift.MovieRent.DataAccess.Interface;
 using Qinshift.MovieRent.DomainModels;
 using Qinshift.MovieRent.DTOs;
@@ -14,10 +16,15 @@ namespace Qinshift.MovieRent.Services.Implementation
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-
-        public UserService(IUserRepository userRepository)
+        private readonly IOptions<AppSettings> _options;
+        private readonly IMapper _mapper;
+        public UserService(IUserRepository userRepository,
+            IOptions<AppSettings> options,
+            IMapper mapper)
         {
-            _userRepository = userRepository;            
+            _userRepository = userRepository;
+            _options = options;
+            _mapper = mapper;
         }
 
         public UserDto Login(LoginDto loginUser)
@@ -29,7 +36,9 @@ namespace Qinshift.MovieRent.Services.Implementation
                 throw new Exception("User not found!");
             }
 
-            var userResult = UserMapper.ToUserDto(user);
+            //var userResult = UserMapper.ToUserDto(user);
+            var userResult = _mapper.Map<UserDto>(user);
+
             userResult.Token = GenerateToken(user);
 
             return userResult;
@@ -61,10 +70,11 @@ namespace Qinshift.MovieRent.Services.Implementation
             return hashedPassword;
         }
 
-        private static string GenerateToken(User user)
+        private string GenerateToken(User user)
         {
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
-            byte[] secretKeyBytes = Encoding.ASCII.GetBytes("this is my custom Secret key for authentication");
+            //byte[] secretKeyBytes = Encoding.ASCII.GetBytes("this is my custom Secret key for authentication");
+            byte[] secretKeyBytes = Encoding.ASCII.GetBytes(_options.Value.Secret);
 
             SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor
             {

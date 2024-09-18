@@ -8,13 +8,17 @@ namespace Qinshift.MovieRent.Services.Helpers
     {
         public static MovieDto ToMovieDto(Movie movie)
         {
-            return new MovieDto
+            if (movie != null)
             {
-                Title = movie.Title,
-                Plot = movie.Plot,
-                ReleaseDate = movie.ReleaseDate,
-                Genre = movie.Genre.ToString()
-            };
+                return new MovieDto
+                {
+                    Title = movie.Title,
+                    Plot = movie.Plot,
+                    ReleaseDate = movie.ReleaseDate,
+                    Genre = movie.Genre.ToString()
+                };
+            }
+            return null;
         }
 
         public static Movie ToMovie(CreateMovieDto createMovieDto)

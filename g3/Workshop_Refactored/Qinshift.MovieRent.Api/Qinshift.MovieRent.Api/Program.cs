@@ -57,18 +57,32 @@ namespace Qinshift.MovieRent.Api
                 });
             });
 
+            // This is how you read all the values from appSettings.json from the AppSettings section
+
+            // On the following line you are getting the 'AppSettings' section from the appSettings.json
+            var appConfig = builder.Configuration.GetSection("AppSettings");
+
+            // On the following line you are creating an instance of AppSettings class that will
+            // have values for the properties same as the values in the AppSettings section in appSettings.json
+            builder.Services.Configure<AppSettings>(appConfig);
+
+            // On the following line you are storing the instance of AppSettings class 
+            // in an appSettings variable
+            var appSettings = appConfig.Get<AppSettings>();
 
 
-            string connString = builder.Configuration.GetConnectionString("ConnectionString");
+            //string connString = builder.Configuration.GetConnectionString("ConnectionString");
 
-            builder.Services.RegisterDbContext(connString);
+            builder.Services.RegisterDbContext(appSettings.ConnectionString);
             builder.Services.RegisterRepositories();
 
 
             builder.Services.AddTransient<IMovieService, MovieService>();
             builder.Services.AddTransient<IUserService, UserService>();
 
-            var secret = builder.Configuration.GetValue<string>("Secret");
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            //var secret = builder.Configuration.GetValue<string>("Secret");
             builder.Services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -85,7 +99,7 @@ namespace Qinshift.MovieRent.Api
                         ValidateIssuer = false,
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey =
-                        new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secret)),
+                        new SymmetricSecurityKey(Encoding.ASCII.GetBytes(appSettings.Secret)),
                     };
                 });
 

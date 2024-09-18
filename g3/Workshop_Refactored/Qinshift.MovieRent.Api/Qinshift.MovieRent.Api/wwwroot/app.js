@@ -10,7 +10,7 @@ fetch('https://localhost:7156/api/user/login', {
     .then(res => res.json())
     .then(user => {
         console.log(user);
-        localStorage.setItem("auth_token", user.token);
+        localStorage.setItem("user", JSON.stringify({ token: user.token, fullName: user.fullName }));
     })
 
 
@@ -19,7 +19,7 @@ fetch('https://localhost:7156/api/user/login', {
 
 fetch('https://localhost:7156/api/movies/all', {
     headers: {
-        'Authorization': 'Bearer ' + localStorage.getItem('auth_token')
+        'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('user')).token
     }
 })
     .then(res => res.json())
@@ -32,7 +32,7 @@ fetch('https://localhost:7156/api/movies/all', {
 
 fetch('https://localhost:7156/api/movies/1', {
     headers: {
-        'Authorization': 'Bearer ' + localStorage.getItem('auth_token')
+        'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('user')).token
     }
 })
     .then(res => res.json())
