@@ -1,4 +1,4 @@
-##Beverage API
+Beverage API
 
 Goal:
 Create an API for a liquor store that sells different types of beverages and provides basic user authentication.
